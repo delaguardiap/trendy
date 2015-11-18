@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
-  resources :users
-
-  get 'about' => 'static_pages#about'
-
-  get 'contact' => 'static_pages#contact'
 
   root 'static_pages#home'
+  get 'about' => 'static_pages#about'
+  get 'contact' => 'static_pages#contact'
+  get 'login' => 'sessions#new'
+  get 'login' => 'sessions#create'
+  get 'logout' => 'sessions#destroy'
+  resources :users
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
