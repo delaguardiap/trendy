@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   get 'about' => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
   get 'login' => 'sessions#new'
-  get 'login' => 'sessions#create'
-  get 'logout' => 'sessions#destroy'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
   resources :users
 
 
