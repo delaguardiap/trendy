@@ -37,4 +37,10 @@ module SessionsHelper
 		session.delete(:user_id)
 		@current_user = nil
 	end
+
+	def user_logged_in?
+    unless logged_in?
+      render 'sessions/new'
+    end
+  end
 end
