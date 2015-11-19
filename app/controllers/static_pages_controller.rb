@@ -12,17 +12,11 @@ class StaticPagesController < ApplicationController
 
   def search
     unless params[:q] == ""
-      flash.now[:failure] = "Success!"
+      flash.now[:success] = "Success!"
     else 
-      flash.now[:success] = "Search cannot be empty"
+      flash.now[:failure] = "Search cannot be empty"
     end
     render "home"
-  end
-
-  def user_logged_in?
-    unless logged_in?
-      render 'sessions/new'
-    end
   end
 
 end
