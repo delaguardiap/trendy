@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
 
+  resources :users
   resources :venues
   root 'static_pages#home'
+  
   get 'about' => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
+  post 'search' => 'static_pages#search'
+
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-  resources :users
+  
 
 
 
