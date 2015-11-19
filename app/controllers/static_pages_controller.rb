@@ -11,7 +11,9 @@ class StaticPagesController < ApplicationController
   end
 
   def search
+    # render plain: params
     unless params[:q] == ""
+      
       flash.now[:success] = "Success!"
     else 
       flash.now[:failure] = "Search cannot be empty"
