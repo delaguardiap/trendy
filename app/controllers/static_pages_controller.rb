@@ -13,6 +13,16 @@ class StaticPagesController < ApplicationController
   def search
     # render plain: params
     unless params[:q] == ""
+      url = "https://maps.googleapis.com/maps/api/geocode/json?address="+params[:q]+"&key=AIzaSyBYmHZqY8gW07Dn4GjmxCJlodGpZTylpVg"
+      response = HTTParty.get(url)
+      @latitude = response['results'][0]['geometry']['location']['lat']
+      @longitude = response['results'][0]['geometry']['location']['lng']
+      url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+@latitude.to_s+",%20"+@longitude.to_s+"&radius=5000&types=bar&key=AIzaSyBITsYDCU8mfLW9exGEBrU6vy5xTNyV264="
+      response = HTTParty.get(url)
+      
+      @bars = response['results'].map do |bar|
+        bar['name']
+      end
       
       flash.now[:success] = "Success!"
     else 
