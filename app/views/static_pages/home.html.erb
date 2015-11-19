@@ -3,7 +3,10 @@
   <%= text_field_tag(:q) %>
   <%= submit_tag("Search") %>
 
-<p>
-	<%=@bars.count%>
-</p>
 <% end %>
+
+<% if @bars %>
+	<% @bars.each do |bar| %>
+		<%= link_to "#{bar.name}, #{bar.address} #{bar.rating}", venue_path(bar) %><br>
+	<% end %>
+<%end%>
