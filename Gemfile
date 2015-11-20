@@ -14,6 +14,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'email_validator'
 gem 'geocoder'
 gem 'httparty'
+gem 'gon', '~> 6.0', '>= 6.0.1'
 
 
 group :development, :test do
