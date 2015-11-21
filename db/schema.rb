@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151121160859) do
+ActiveRecord::Schema.define(version: 20151121225031) do
 
   create_table "check_ins", force: :cascade do |t|
     t.integer  "user_id"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20151121160859) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean  "active"
+    t.integer  "rating"
+    t.string   "review"
   end
 
   add_index "check_ins", ["user_id"], name: "index_check_ins_on_user_id"
