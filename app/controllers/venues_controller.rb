@@ -10,6 +10,11 @@ class VenuesController < ApplicationController
   # GET /venues/1
   # GET /venues/1.json
   def show
+    venue = Venue.find(params[:id])
+     gon.push({
+       :lat => venue.lat,
+       :lng => venue.lng
+    })
   end
 
   # GET /venues/new

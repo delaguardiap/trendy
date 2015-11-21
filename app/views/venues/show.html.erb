@@ -1,5 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<div id='map'>
+</div>
+<%= include_gon %>
+<script type="text/javascript">
+     venueaddress();
+</script>
+
+
 <p>
   <strong>Name:</strong>
   <%= @venue.name %>
@@ -14,6 +22,7 @@
   <strong>Rating:</strong>
   <%= @venue.rating %>
 </p>
+
 
 
 <%= link_to 'Check in', check_in_path(@venue), method: 'post' %>
