@@ -15,5 +15,6 @@
   <%= @venue.rating %>
 </p>
 
-<%= link_to 'Edit', edit_venue_path(@venue) %> |
-<%= link_to 'Back', venues_path %>
+
+<%= link_to 'Check in', check_in_path(@venue), method: 'post' %>
+<%= link_to 'Back', root_path %>
