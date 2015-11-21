@@ -19,7 +19,7 @@ function showPosition(position) {
 
 //------------------------
 
-console.log("Got here");
+
 //Leaf Bar Location
 function venueaddress(){
 var map = L.map('map').setView([gon.lat,gon.lng], 16);
