@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :check_ins
 	attr_accessor :remember_token
 	validates :name, presence: true, length: { maximum: 50 }
 	validates :email, email: true, uniqueness: true
