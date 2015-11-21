@@ -8,6 +8,11 @@ class CheckInsController < ApplicationController
 	  	CheckIn.create(user_id: current_user.id, venue_id: params[:format], active: true)
 	 	end
 	 		@venue = Venue.find params[:format]
+	 	gon.push({
+       :lat => @venue.lat,
+       :lng => @venue.lng
+    })
+
 	 		render 'venues/show'
   end
 
