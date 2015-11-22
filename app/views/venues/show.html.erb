@@ -53,3 +53,9 @@ Check-In
 <br>
 <%= link_to 'Check in', check_in_path(@venue), method: 'post', id: "check_in" %>
 <%= link_to 'Back', root_path %>
+
+<!-- Testing stuff -->
+<% @active_checkins.each do |element| %>
+<p><%= element["user_id"] %></p>
+<%end%>	
+
