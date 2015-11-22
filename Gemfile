@@ -15,7 +15,7 @@ gem 'email_validator'
 gem 'geocoder'
 gem 'httparty'
 gem 'gon', '~> 6.0', '>= 6.0.1'
-
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 group :development, :test do
 	gem 'sqlite3'
