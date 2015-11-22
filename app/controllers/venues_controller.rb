@@ -11,11 +11,14 @@ class VenuesController < ApplicationController
   # GET /venues/1.json
   def show
     venue = Venue.find(params[:id])
-    @active_checkins = venue.check_ins.active_checkIns
-    # @inactive_checkins = venue.check_ins.inactive_checkIns
-    @inactive_checkins.each do |x|
-      x.update_column(:active, false)
+    Venue.all.each do |venue|
+      venue.check_ins do |check_in|
+        check_in.destroy
+      end
     end
+    @active_checkins = venue.check_ins.active_checkIns.as_json
+    venue.check_ins.inactive_checkIns
+    #render plain: @inactive_checkins.count
      gon.push({
        :lat => venue.lat,
        :lng => venue.lng

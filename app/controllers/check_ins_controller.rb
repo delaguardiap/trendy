@@ -1,6 +1,5 @@
 class CheckInsController < ApplicationController
   def create
-  	#render plain: params.to_json
 	  if current_user.check_ins.count != 0
 	  	current_user.check_ins.last.update_column(:active, false)
 	    CheckIn.create(user_id: current_user.id, venue_id: params[:format], active: true)
@@ -13,7 +12,7 @@ class CheckInsController < ApplicationController
        :lng => @venue.lng
     })
 
-	 		render 'venues/show'
+	 		redirect_to :back
   end
 
   def destroy

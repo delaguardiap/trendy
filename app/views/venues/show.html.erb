@@ -27,5 +27,7 @@
 <%= link_to 'Back', root_path %>
 
 <!-- Testing stuff -->
-
+<% @active_checkins.each do |element| %>
+<p><%= element["user_id"] %></p>
+<%end%>	
 
