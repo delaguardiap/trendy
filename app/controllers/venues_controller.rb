@@ -23,6 +23,8 @@ class VenuesController < ApplicationController
        :lat => venue.lat,
        :lng => venue.lng
     })
+    @venuelast = CheckIn.last.venue.name
+
   end
 
   # GET /venues/new
