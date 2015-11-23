@@ -9,9 +9,12 @@
   <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 
 </head>
+
 <%= render "partials/header"%>
 <div class="container">
-
+  <% if @lastCheckIn%>
+    <strong>You are currently checked in at <%=@lastVenue.name%></strong>
+  <% end%>
 	<% flash.each do |message_type, message| %>
 		<div class="alert alert-<% message_type %>"><%= message %></div>
 	<%end%>

@@ -23,7 +23,6 @@ class VenuesController < ApplicationController
        :lat => venue.lat,
        :lng => venue.lng
     })
-    # @venuelast = CheckIn.last.venue.name
     if current_user.check_ins.last && current_user.check_ins.last.active == true
       @lastCheckIn = current_user.check_ins.last
       @lastVenue = Venue.find(@lastCheckIn.venue_id)

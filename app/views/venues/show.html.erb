@@ -30,10 +30,6 @@
 <%= link_to 'Back', root_path %>
 <br>
 
-<% if @lastCheckIn%>
-	<strong>You are currently checked in at <%=@lastVenue.name%></strong>
-<% end%>
-
 <!-- Testing stuff -->
 <% @active_checkins.each do |element| %>
 <p><%= element['name'] %></p>
