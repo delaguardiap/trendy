@@ -30,8 +30,8 @@
 <%= link_to 'Back', root_path %>
 <br>
 
-<% if @active_checkins%>
-<strong>You are currently checked in at <%=@venuelast%></strong>
+<% if @lastCheckIn%>
+	<strong>You are currently checked in at <%=@lastVenue.name%></strong>
 <% end%>
 
 <!-- Testing stuff -->
