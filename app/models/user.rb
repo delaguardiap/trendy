@@ -11,8 +11,8 @@ class User < ActiveRecord::Base
   # Will call the active scope on the user's check ins
   # and will call the deactivate! method on each of those check ins.
   def deactivate_check_ins!
-    check_ins.each do |checkin|
-      checkin.deactivate!
+    if check_ins.last
+      check_ins.last.deactivate!
     end
   end
 # user.check_in!(venue)
