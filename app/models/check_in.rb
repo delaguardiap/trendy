@@ -3,7 +3,7 @@ class CheckIn < ActiveRecord::Base
   belongs_to :venue
 
   scope :active, -> {
-  	where(active: true, created_at: (Time.now - 5.hours))
+  	where(active: true, created_at: (Time.now - 5.hours)..(Time.now))
   }
 
 	scope :inactive, -> {
