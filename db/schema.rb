@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151121225031) do
+ActiveRecord::Schema.define(version: 20151124155935) do
 
   create_table "check_ins", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "venue_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean  "active"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.boolean  "active",     default: true
     t.integer  "rating"
+    t.integer  "0"
     t.string   "review"
   end
 

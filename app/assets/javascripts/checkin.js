@@ -1,5 +1,5 @@
-$(function() {
-	$('#check_in').click(function(){
-		console.log("Good");
-	});
-});
+// $(function() {
+// 	$('#check_in').on('click', function(){
+// 		console.log("Good");
+// 	});
+// });

@@ -1,11 +1,26 @@
 class User < ActiveRecord::Base
+  has_secure_password
+
+
   has_many :check_ins
-	attr_accessor :remember_token
-	validates :name, presence: true, length: { maximum: 50 }
+	
+  validates :name, presence: true, length: { maximum: 50 }
 	validates :email, email: true, uniqueness: true
 	validates :password, presence: true, length: { minimum: 6 }
 
-	has_secure_password
+  # Will call the active scope on the user's check ins
+  # and will call the deactivate! method on each of those check ins.
+  def deactivate_check_ins!
+    check_ins.each do |checkin|
+      checkin.deactivate!
+    end
+  end
+# user.check_in!(venue)
+
+  def check_in!(venue)
+    deactivate_check_ins!
+    check_ins.create venue: venue 
+  end
 
 	def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 <div id='map'>
 </div>
 <%= include_gon %>
@@ -19,18 +18,19 @@
 </p>
 
 <p>
-  <strong>Rating:</strong>
+  <strong>Google rating:</strong>
   <%= @venue.rating %>
 </p>
 
 <%= render 'partials/checkin' %>
 
-<br>
-<%= link_to 'Check in', check_in_path(@venue), method: 'post', id: "check_in" %>
-<%= link_to 'Back', root_path %>
-<br>
+<div class="actions">
+<%=link_to 'Check in', controller: "check_ins", action: "create", venue_id: params[:id] %>
+<p><%= link_to 'Back', root_path %>
+</div>
 
-<!-- Testing stuff -->
-<% @active_checkins.each do |element| %>
-<p><%= element['name'] %></p>
+<div id="active_checkIns">
+<% @elements.each do |element| %>
+<p><%= "User: " + element[:user].name%> <%="Rating: " + element[:check_in].rating.to_s%> <%="Review: " + element[:check_in].review.to_s%></p>
 <%end%>
+</div>

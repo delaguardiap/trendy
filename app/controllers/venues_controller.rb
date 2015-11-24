@@ -10,23 +10,20 @@ class VenuesController < ApplicationController
   # GET /venues/1
   # GET /venues/1.json
   def show
-    venue = Venue.find(params[:id])
-    Venue.all.each do |venue|
-      venue.check_ins do |check_in|
-        check_in.destroy
-      end
+    @venue = Venue.find(params[:id])
+    active_checkins = @venue.check_ins.active.as_json
+    @elements = Array.new
+
+    active_checkins.each do |check_in|
+      user = User.find(check_in['user_id'])
+      check_in = user.check_ins.last
+      @elements << {user: user, check_in: check_in}
     end
-    @active_checkins = venue.check_ins.active_checkIns.as_json
-    venue.check_ins.inactive_checkIns
-    #render plain: @inactive_checkins.count
-     gon.push({
-       :lat => venue.lat,
-       :lng => venue.lng
+
+    gon.push({
+       :lat => @venue.lat,
+       :lng => @venue.lng
     })
-    # if current_user.check_ins.last && current_user.check_ins.last.active == true
-    #   @lastCheckIn = current_user.check_ins.last
-    #   @lastVenue = Venue.find(@lastCheckIn.venue_id)
-    # end
 
   end
 
