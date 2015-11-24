@@ -12,8 +12,8 @@ class StaticPagesController < ApplicationController
 
   def search
     unless params[:chicken] == ""
-
-      url = "https://maps.googleapis.com/maps/api/geocode/json?address="+params[:chicken]+"&key=#{ENV['googlekey']}"
+      address = params[:chicken].gsub(' ','%20')
+      url = "https://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key=#{ENV['googlekey']}"
       response = HTTParty.get(url)
       @latitude = response['results'][0]['geometry']['location']['lat']
       @longitude = response['results'][0]['geometry']['location']['lng']
