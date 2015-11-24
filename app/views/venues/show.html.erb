@@ -25,12 +25,17 @@
 <%= render 'partials/checkin' %>
 
 <div class="actions">
+
 <%=link_to 'Check in', controller: "check_ins", action: "create", venue_id: params[:id] %>
 <p><%= link_to 'Back', root_path %>
+
 </div>
+
 <% first = 'http://maps.apple.com/?daddr=' %>
 <% last = '&z=10&t=s' %>
+
 <%= link_to 'Open In Maps', first + @venue.lat.to_s+ ", "+ @venue.lng.to_s + last, class:'btn btn-info btn-sm'%>
+
 <div id="active_checkIns">
 <% @elements.each do |element| %>
 <p><%= "User: " + element[:user].name%> <%="Rating: " + element[:check_in].rating.to_s%> <%="Review: " + element[:check_in].review.to_s%></p>
