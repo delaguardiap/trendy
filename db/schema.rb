@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151124155935) do
+ActiveRecord::Schema.define(version: 20151125131806) do
 
   create_table "check_ins", force: :cascade do |t|
     t.integer  "user_id"
@@ -26,6 +26,22 @@ ActiveRecord::Schema.define(version: 20151124155935) do
 
   add_index "check_ins", ["user_id"], name: "index_check_ins_on_user_id"
   add_index "check_ins", ["venue_id"], name: "index_check_ins_on_venue_id"
+
+  create_table "downvotes", force: :cascade do |t|
+    t.integer  "check_in_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "downvotes", ["check_in_id"], name: "index_downvotes_on_check_in_id"
+
+  create_table "upvotes", force: :cascade do |t|
+    t.integer  "check_in_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "upvotes", ["check_in_id"], name: "index_upvotes_on_check_in_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

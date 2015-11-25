@@ -47,7 +47,12 @@
 <%= link_to 'Open In Maps', first + @venue.lat.to_s+ ", "+ @venue.lng.to_s + last, class:'btn btn-info btn-sm'%>
 
 <div id="active_checkIns">
-<% @elements.each do |element| %>
-<p><%= "User: " + element[:user].name%> <%="Rating: " + element[:check_in].rating.to_s%> <%="Review: " + element[:check_in].review.to_s%></p>
-<%end%>
+
+	<% @elements.each do |element| %>
+		<div class="review">
+			<p><%= "User: " + element[:user].name%> <%="Rating: " + element[:check_in].rating.to_s%></p> 
+			<p><%="Review: " + element[:check_in].review.to_s%></p>
+		</div>
+	<%end%>
+
 </div>

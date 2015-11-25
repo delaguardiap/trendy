@@ -1,6 +1,8 @@
 class CheckIn < ActiveRecord::Base
   belongs_to :user
   belongs_to :venue
+  has_many :upvotes
+  has_many :downvotes
 
   scope :active, -> {
   	where(active: true, created_at: (Time.now - 5.hours)..(Time.now))
@@ -13,6 +15,14 @@ class CheckIn < ActiveRecord::Base
 
 	def deactivate!
 		self.update(active: false)
+	end
+
+	def upvote!
+		upvotes.create
+	end
+
+	def downvote!
+		downvotes.create
 	end
 
 
