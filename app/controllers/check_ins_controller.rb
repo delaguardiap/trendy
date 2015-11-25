@@ -1,8 +1,8 @@
 class CheckInsController < ApplicationController
-  # before_action :check_in_params, only: :create
+  #before_action :check_in_params, only: :create
 
   def create
-    # render plain: params
+    render plain: params
     venue = Venue.find params[:venue_id] #why format?
     current_user.check_in! venue
 	 	
@@ -11,7 +11,7 @@ class CheckInsController < ApplicationController
        :lng => venue.lng
     })
 
-    redirect_to :back
+    # redirect_to :back
   end
 
   def destroy
@@ -21,7 +21,7 @@ class CheckInsController < ApplicationController
   private
 
   def check_in_params
-    params.require(:check_in).permit(:venue_id)
+    params.require(:check_in).permit(:venue_id, :review, :rating)
   end
 
 end

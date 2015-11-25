@@ -22,11 +22,21 @@
   <%= @venue.rating %>
 </p>
 
-<%= render 'partials/checkin' %>
-
 <div class="actions">
 
-<%=link_to 'Check in', controller: "check_ins", action: "create", venue_id: params[:id] %>
+
+<p id = "check_in_link">Check Link</p>
+<div id = "check_in">
+	<%= form_tag("/check_in", method: "post")do %>
+		<%= hidden_field_tag(:venue_id, @venue.id) %>
+		<%= label_tag :review, "Review" %>
+	  <%= text_field_tag :review %>
+	  <%= label_tag :rating, "Rating" %>
+	  <%= text_field_tag :rating %>
+	  <%= submit_tag("Check In")%>
+	<%end%>
+</div>
+
 <p><%= link_to 'Back', root_path %>
 
 </div>
