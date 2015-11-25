@@ -2,16 +2,15 @@ class CheckInsController < ApplicationController
   #before_action :check_in_params, only: :create
 
   def create
-    render plain: params
     venue = Venue.find params[:venue_id] #why format?
-    current_user.check_in! venue
+    current_user.check_in! venue, params[:review], params[:rating]
 	 	
     gon.push({
        :lat => venue.lat,
        :lng => venue.lng
     })
 
-    # redirect_to :back
+    redirect_to :back
   end
 
   def destroy

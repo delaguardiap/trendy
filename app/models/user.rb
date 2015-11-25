@@ -17,9 +17,9 @@ class User < ActiveRecord::Base
   end
 # user.check_in!(venue)
 
-  def check_in!(venue)
+  def check_in!(venue, review="", rating=0)
     deactivate_check_ins!
-    check_ins.create venue: venue 
+    check_ins.create venue: venue, review: review, rating: rating
   end
 
 	def User.digest(string)
