@@ -9,4 +9,7 @@ $(function(){
 			$("#check_in").slideUp(400);	
 		}
 	});
+	// $("#upvote").on('click', function(){
+		
+	// });
 });

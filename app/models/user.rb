@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 
 
   has_many :check_ins
+  has_many :upvotes
 	
   validates :name, presence: true, length: { maximum: 50 }
 	validates :email, email: true, uniqueness: true
@@ -45,4 +46,5 @@ class User < ActiveRecord::Base
 	def forget
     update_attribute(:remember_digest, nil)
   end
+
 end

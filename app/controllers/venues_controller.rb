@@ -1,4 +1,5 @@
 class VenuesController < ApplicationController
+  include SessionsHelper
   before_action :set_venue, only: [:show, :edit, :update, :destroy]
 
   # GET /venues
@@ -19,6 +20,8 @@ class VenuesController < ApplicationController
       check_in = user.check_ins.last
       @elements << {user: user, check_in: check_in}
     end
+
+    @current_user = current_user
 
     gon.push({
        :lat => @venue.lat,

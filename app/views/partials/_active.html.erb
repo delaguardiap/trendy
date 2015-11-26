@@ -1,0 +1,11 @@
+<div id="active_checkIns">
+
+	<% @elements.each do |element| %>
+		<div class="review">
+			<p><%= "User: " + element[:user].name%> <%="Rating: " + element[:check_in].rating.to_s%></p> 
+			<p><%="Review: " + element[:check_in].review.to_s%></p>
+			<%= element[:check_in].votes%>
+		</div>
+	<%end%>
+
+</div>

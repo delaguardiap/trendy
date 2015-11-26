@@ -17,13 +17,32 @@ class CheckIn < ActiveRecord::Base
 		self.update(active: false)
 	end
 
-	def upvote!
-		upvotes.create
+ 	def upvote!(user)
+  	upvotes.create user_id: user.id
 	end
 
-	def downvote!
-		downvotes.create
+	def upvoted? user
+		# puts user.id
+		if upvotes.empty? == false
+				upvotes.each do |upvote|
+
+					if upvote.user_id == user.id
+						return true
+					end
+				end
+			return false
+		end
+		return false
 	end
+
+
+	# def downvote!
+	# 	downvotes.create
+	# end
+
+	# def votes
+	# 	upvotes.count - downvotes.count	
+	# end	
 
 
 	
