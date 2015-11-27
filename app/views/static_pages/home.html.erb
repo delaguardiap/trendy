@@ -9,6 +9,8 @@
 
 <% if @bars %>
 	<% @bars.each do |bar| %>
+		<%b = bar%>
 		<%= link_to "#{bar.name}, #{bar.address} #{bar.rating}", venue_path(bar) %><br>
 	<% end %>
+	<%= getTweets b %>
 <%end%>
