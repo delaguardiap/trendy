@@ -24,6 +24,11 @@ class CheckInsController < ApplicationController
     redirect_to :back
   end
 
+  def downvote_submit
+    CheckIn.find(params[:check_in]).downvote! current_user
+    redirect_to :back
+  end
+
   private
 
   def check_in_params

@@ -5,6 +5,8 @@
 
 <% end %>
 
+<%b = 0%>
+
 <% if @bars %>
 	<% @bars.each do |bar| %>
 		<%= link_to "#{bar.name}, #{bar.address} #{bar.rating}", venue_path(bar) %><br>

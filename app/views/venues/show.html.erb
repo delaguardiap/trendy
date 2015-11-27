@@ -55,10 +55,19 @@
 			<%="Rating: " + element[:check_in].rating.to_s%></p> 
 			<p><%="Review: " + element[:check_in].review.to_s%></p>
 			<% unless element[:check_in].upvoted? current_user %>
+				
 				<%= form_tag("/vote", method: "post") do %>
-					<%= hidden_field_tag(:check_in, element[:check_in].id) %>p
-					<%= submit_tag("Like") %>
+					<%= hidden_field_tag(:check_in, element[:check_in].id) %>
+					<%=  submit_tag("Like") %>
+				<%end%>
+				
+					<% else %>
+					
+				<%= form_tag("/downvote", method: "post") do %>
+					<%= hidden_field_tag(:check_in, element[:check_in].id) %>
+					<%=  submit_tag("Liked!") %>				
 				<% end %>
+			
 			<%end%>
 
 		</div>

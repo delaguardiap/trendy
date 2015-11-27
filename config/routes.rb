@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   post 'check_in' => 'check_ins#create'
   delete 'check_in' => 'check_ins#destroy'
   post 'vote' => 'check_ins#vote_submit'
+  post 'downvote' => 'check_ins#downvote_submit'
   
 end

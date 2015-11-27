@@ -21,6 +21,11 @@ class CheckIn < ActiveRecord::Base
   	upvotes.create user_id: user.id
 	end
 
+	def downvote!(user)
+		c = upvotes.find_by user_id: user.id
+		c.destroy
+	end
+
 	def upvoted? user
 		# puts user.id
 		if upvotes.empty? == false
