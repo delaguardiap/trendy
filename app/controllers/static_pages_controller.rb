@@ -36,13 +36,4 @@ class StaticPagesController < ApplicationController
     render "home"
   end
 
-  private 
-
-  def user_logged_in?
-    if current_user
-      true
-    else
-      false
-  end
-
 end
