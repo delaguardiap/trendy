@@ -1,11 +1,5 @@
 class SessionsController < ApplicationController
-      
-
-    # def set_auth
-    #   @auth = session[:omniauth] if session[:omniauth]
-    #   puts "*" * 200
-    #   puts request.env['omniauth.auth']
-    #   puts "*" * 200
+          
 
     # end
   def new
@@ -44,8 +38,8 @@ class SessionsController < ApplicationController
       end
       current_user = @user
       session[:user_id] = @user.id
-      # redirect_to root_path
-      render 'whatever'
+      redirect_to root_path
+
     end
   #
   def destroy
