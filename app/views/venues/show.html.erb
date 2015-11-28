@@ -21,10 +21,10 @@
   <strong>Google rating:</strong>
   <%= @venue.rating %>
 </p>
-
+	
 <p>
-	<strong>Recent Tweets:</strong>
-		<%= getTweets @venue %>	
+	<strong>Tweets:</strong>
+	<%= getTweets @venue %>	
 </p>
 
 <div class="actions">
@@ -37,8 +37,8 @@
 		<%= label_tag :review, "Review" %>
 	  <%= text_field_tag :review %>
 	  <%= label_tag :rating, "Rating" %>
-	  <%= text_field_tag :rating %>
-	  <%= submit_tag "Check In", :id => "check_in_button"%>
+	  <%= range_field_tag :rating, step: 1 %>
+	  <%= submit_tag("Check In")%>
 	<%end%>
 </div>
 
@@ -63,14 +63,14 @@
 				
 				<%= form_tag("/vote", method: "post") do %>
 					<%= hidden_field_tag(:check_in, element[:check_in].id) %>
-					<%=  submit_tag "Like", id: "like_button" %>
+					<%=  submit_tag("Like") %>
 				<%end%>
 				
 					<% else %>
 					
 				<%= form_tag("/downvote", method: "post") do %>
 					<%= hidden_field_tag(:check_in, element[:check_in].id) %>
-					<%=  submit_tag "Liked!", id: "unlike_button" %>				
+					<%=  submit_tag("Liked!") %>				
 				<% end %>
 			
 			<%end%>
