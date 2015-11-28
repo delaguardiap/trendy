@@ -1,4 +1,6 @@
 $(function(){
+	<% environment.context_class.instance_eval { include CheckInsHelper } %>
+	
 	var clicked = true;
 	$("#check_in_link").on('click', function(){
 		if(clicked) {
@@ -8,6 +10,10 @@ $(function(){
 			clicked = true;
 			$("#check_in").slideUp(400);	
 		}
+	});
+
+	$("#like_button").on('click', function(){
+
 	});
 	
 });

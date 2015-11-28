@@ -38,7 +38,7 @@
 	  <%= text_field_tag :review %>
 	  <%= label_tag :rating, "Rating" %>
 	  <%= text_field_tag :rating %>
-	  <%= submit_tag("Check In")%>
+	  <%= submit_tag "Check In", :id => "check_in_button"%>
 	<%end%>
 </div>
 
@@ -63,14 +63,14 @@
 				
 				<%= form_tag("/vote", method: "post") do %>
 					<%= hidden_field_tag(:check_in, element[:check_in].id) %>
-					<%=  submit_tag("Like") %>
+					<%=  submit_tag "Like", id: "like_button" %>
 				<%end%>
 				
 					<% else %>
 					
 				<%= form_tag("/downvote", method: "post") do %>
 					<%= hidden_field_tag(:check_in, element[:check_in].id) %>
-					<%=  submit_tag("Liked!") %>				
+					<%=  submit_tag "Liked!", id: "unlike_button" %>				
 				<% end %>
 			
 			<%end%>
