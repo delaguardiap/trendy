@@ -21,6 +21,11 @@
   <strong>Google rating:</strong>
   <%= @venue.rating %>
 </p>
+	
+<p>
+	<strong>Tweets:</strong>
+	<%= getTweets @venue %>	
+</p>
 
 <div class="actions">
 
@@ -32,7 +37,7 @@
 		<%= label_tag :review, "Review" %>
 	  <%= text_field_tag :review %>
 	  <%= label_tag :rating, "Rating" %>
-	  <%= text_field_tag :rating %>
+	  <%= range_field_tag :rating, value = nil,  min: 1, max: 5, step: 1 %>
 	  <%= submit_tag("Check In")%>
 	<%end%>
 </div>

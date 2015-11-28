@@ -24,6 +24,11 @@ $gray-medium-light: #eaeaea;
 
 body {
 	padding-top: 60px;
+	font-size: 16px;
+}
+
+#review {
+	font-size: 16px		;
 }
 
 section {
@@ -147,4 +152,13 @@ input {
 
 .review {
 	border: 1px solid black;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input, textarea {
+  max-width:100%
 }
