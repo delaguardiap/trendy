@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-       before_action :set_auth
+      
 
     # def set_auth
     #   @auth = session[:omniauth] if session[:omniauth]
@@ -62,26 +62,5 @@ class SessionsController < ApplicationController
   def auth_hash
     request.env['omniauth.auth']
   end
-
-
-  def set_auth
-   request.env['omniauth.auth']
-   sesh = {}
-   auth = request.env["omniauth.auth"]
-   sesh[:omniauth] = auth.except('extra')
-   puts "*" * 200
-   puts sesh[:omniauth].inspect
-   puts "*" * 200
-   @auth = 5
-   puts @auth.inspect
-
-   #  puts "*" * 200
-   #  puts @auth['info'].inspect
-  #   # puts "*" * 200
-  #
-  end
-  # private
-
-
 
 end
