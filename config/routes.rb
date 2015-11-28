@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users
   resources :venues
   root 'static_pages#home'
-  
+
   get 'about' => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
   post 'search' => 'static_pages#search'
@@ -20,5 +20,9 @@ Rails.application.routes.draw do
   delete 'check_in' => 'check_ins#destroy'
   post 'vote' => 'check_ins#vote_submit'
   post 'downvote' => 'check_ins#downvote_submit'
-  
+
+  # Omniauth route
+  get 'auth/:provider/callback', to: 'sessions#omnicreate'
+  delete 'sign_out', to: 'sessions#destroy', as: 'sign_out'
+
 end

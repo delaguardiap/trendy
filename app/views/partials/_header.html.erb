@@ -6,12 +6,16 @@
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Help", "#" %></li>
         <% if logged_in? %>
+        <%= render 'sessions/whatever' %>
           <li><%= link_to "Users", '#' %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Account <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
+              <li> Signed in as: <%#= current_user.name %> - <%#= image_tag(@auth['info']['image'], width: '50', heigth: '50', class: 'img-circle') %></li>
+
+
               <li><%= link_to "Profile", current_user %></li>
               <li><%= link_to "Settings", edit_user_path(current_user) %></li>
               <li class="divider"></li>
@@ -22,6 +26,9 @@
           </li>
         <% else %>
           <li><%= link_to "Log in", login_path %></li>
+          <li><%= link_to "auth/facebook" do %><%= image_tag('facebook.png', width: '40', heigth: '40', class: 'img-circle') %><% end %></li>
+          <li><%= link_to "auth/twitter" do %><%= image_tag('twitter.png', width: '40', heigth: '40', class: 'img-circle') %><% end %></li>
+
         <% end %>
       </ul>
     </nav>

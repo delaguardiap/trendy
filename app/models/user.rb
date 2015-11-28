@@ -1,13 +1,15 @@
 class User < ActiveRecord::Base
   has_secure_password
 
+  attr_accessor :skip_method
+  attr_accessor :skip_method1
 
   has_many :check_ins
   has_many :upvotes
-	
+
   validates :name, presence: true, length: { maximum: 50 }
 	validates :email, email: true, uniqueness: true
-	validates :password, presence: true, length: { minimum: 6 }
+	validates :password, presence: true, length: { minimum: 6 }, :if => 'provider.blank?'
 
   # Will call the active scope on the user's check ins
   # and will call the deactivate! method on each of those check ins.
@@ -33,7 +35,7 @@ class User < ActiveRecord::Base
 		SecureRandom.urlsafe_base64
 	end
 
-  def remember 
+  def remember
     self.remember_token = User.new_token
     update_attribute(:remember_digest, User.digest(remember_token))
   end
@@ -45,6 +47,18 @@ class User < ActiveRecord::Base
 
 	def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  def self.sign_in_from_omniauth(auth)
+    find_by(provider: auth['provider'], uid: auth['uid']) || create_user_from_omniauth(auth)
+  end
+
+  def self.create_user_from_omniauth(auth)
+    create(
+    provider: auth['provider'],
+    uid: auth['uid'],
+    name: auth['info']['name']
+    )
   end
 
 end

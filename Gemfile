@@ -15,6 +15,8 @@ gem 'geocoder'
 gem 'httparty'
 gem 'gon', '~> 6.0', '>= 6.0.1'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 group :development, :test do
 	gem 'sqlite3'

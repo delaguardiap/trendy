@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125223427) do
+ActiveRecord::Schema.define(version: 20151127204123) do
 
   create_table "check_ins", force: :cascade do |t|
     t.integer  "user_id"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20151125223427) do
     t.datetime "updated_at",                null: false
     t.boolean  "active",     default: true
     t.integer  "rating"
-    t.integer  "0"
     t.string   "review"
   end
 
@@ -34,6 +33,24 @@ ActiveRecord::Schema.define(version: 20151125223427) do
   end
 
   add_index "downvotes", ["check_in_id"], name: "index_downvotes_on_check_in_id"
+
+  create_table "friendships", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
+  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
   create_table "upvotes", force: :cascade do |t|
     t.integer  "check_in_id"
@@ -52,6 +69,8 @@ ActiveRecord::Schema.define(version: 20151125223427) do
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
     t.string   "remember_digest"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   create_table "venues", force: :cascade do |t|

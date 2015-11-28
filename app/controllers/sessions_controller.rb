@@ -1,4 +1,13 @@
 class SessionsController < ApplicationController
+       before_action :set_auth
+
+    # def set_auth
+    #   @auth = session[:omniauth] if session[:omniauth]
+    #   puts "*" * 200
+    #   puts request.env['omniauth.auth']
+    #   puts "*" * 200
+
+    # end
   def new
   end
 
@@ -12,10 +21,67 @@ class SessionsController < ApplicationController
   			flash.now[:danger] = "Invalid email/password combination"
   			render 'new'
   		end
-  end
+    end
 
+    def omnicreate
+  #     #OMNIAuth________
+  #     # user = User.sign_in_from_omniauth(auth)
+  #     # # log_in(user)
+  #     # redirect_to root_url, notice: "You Have Successfully Signed In!"
+  #     # puts"*"*200
+  #
+  #     # puts auth_hash.extra.to_hash["raw_info"]["email"]
+  #     # puts"*"*200
+  #     # @user = User.find_or_create_from_auth_hash(auth_hash)
+  #     # auth_hash
+      @user = User.find_by(uid: auth_hash.uid)
+      unless @user
+        @user = User.new
+        @user.uid = auth_hash.uid
+        @user.email = auth_hash.extra.to_hash["raw_info"]["email"]
+        @user.name = auth_hash.extra.to_hash["raw_info"]["name"]
+        @user.save!(validate: false)
+      end
+      current_user = @user
+      session[:user_id] = @user.id
+      # redirect_to root_path
+      render 'whatever'
+    end
+  #
   def destroy
     log_out if logged_in?
-    redirect_to root_url
+    #  redirect_to root_url
+  #
+  session[:user_id] = nil
+  session[:omniauth] = nil
+  redirect_to root_url, notice: "You Have Signed Out."
+   end
+  #
+  # protected
+  #
+  def auth_hash
+    request.env['omniauth.auth']
   end
+
+
+  def set_auth
+   request.env['omniauth.auth']
+   sesh = {}
+   auth = request.env["omniauth.auth"]
+   sesh[:omniauth] = auth.except('extra')
+   puts "*" * 200
+   puts sesh[:omniauth].inspect
+   puts "*" * 200
+   @auth = 5
+   puts @auth.inspect
+
+   #  puts "*" * 200
+   #  puts @auth['info'].inspect
+  #   # puts "*" * 200
+  #
+  end
+  # private
+
+
+
 end
