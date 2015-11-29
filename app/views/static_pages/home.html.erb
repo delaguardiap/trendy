@@ -11,8 +11,10 @@
 		<%= link_to venue_path(bar) do %>
 		 	<div class="venue">
 		 	<ul>
- 		 		<li><%= bar.name %></li>
- 		 		<li><%= bar.address %></li>
+ 		 		<li>Name: <%= bar.name %></li>
+ 		 		<li>Address: <%= bar.address %></li>
+ 		 		<li>Rating: <%= bar.rating %></li>
+ 		 		<li>Check ins: <%= bar.check_ins.count %></li>
  			</ul>
  			</div>
 		<%end%>
