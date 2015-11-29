@@ -1,8 +1,7 @@
 <%= form_tag("/search", method: "post") do %>
   <%= label_tag(:chicken, "Search for:") %>
   <%= text_field_tag(:chicken) %>
-  <%= submit_tag("Search") %>
-
+  <%= submit_tag "Search", id: "search_button" %>
 <% end %>
 
 

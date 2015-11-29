@@ -24,7 +24,7 @@ $gray-medium-light: #eaeaea;
 
 body {
 	padding-top: 60px;
-	font-size: 16px;
+	font-size: 4em;
 }
 
 #review {
@@ -178,7 +178,12 @@ input, textarea {
 	height: 3em;
 }
 
-/*search bar*/
+/*search*/
 #chicken {
 	font-size: 5em;
+}
+
+#search_button {
+	height: 1.2em;
+	font-size: 3em;
 }
