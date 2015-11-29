@@ -25,7 +25,7 @@ $gray-medium-light: #eaeaea;
 body {
 	padding-top: 60px;
 	font-size: 4em;
-	background-image:url("bars2.jpg");
+	background-image:url("back.jpg");
 	background-size: cover;
 }
 
@@ -101,10 +101,17 @@ footer {
 /* forms */
 input, textarea, select, .uneditable-input {
 	border: 1px solid #bbb;
-	width:40%;
-	margin-bottom: 15px;
+	width:80%;
+	margin-bottom: 35px;
+	font-size: 100px;
 	@include box_sizing;
 }
+
+.form-control{
+	height: 2em;
+	font-size: 1em;
+}
+
 
 input {
 	height: auto;
@@ -201,25 +208,25 @@ input, textarea {
 .title {
 
   font-family: 'Fredoka One', cursive;
-  color: purple;
+  color: white;
   font-size: 10em;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  text-shadow: -1px 0 purple, 0 1px purple, 1px 0 purple, 0 -1px purple;
 }
 
 .title1{
 
   font-family: 'Fredoka One', cursive;
-  color: purple;
-  font-size: 2em;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  color: white;
+  font-size: 2.5em;
+  text-shadow: -1px 0 purple, 0 1px purple, 1px 0 purple, 0 -1px purple;
 	text-align: center;
 }
 
 .new{
 	font-family: 'Fredoka One', cursive;
-  color: purple;
+  color: white;
   font-size: 2em;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  text-shadow: -1px 0 purple, 0 1px purple, 1px 0 purple, 0 -1px purple;
 	text-align: right;
 	&:hover {
 		color: purple;
@@ -235,7 +242,7 @@ input, textarea {
 }
 .btn-primary.outline {
     border: 2px solid #800080;
-    color: #800080;
+    color: #white;
 		color: purple;
 	  font-size: 2em;
 	  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
