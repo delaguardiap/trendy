@@ -25,7 +25,7 @@ $gray-medium-light: #eaeaea;
 body {
 	padding-top: 60px;
 	font-size: 4em;
-	background-image:url("footer_lodyas.png");
+	background-image:url("bars2.jpg");
 	background-size: cover;
 }
 
@@ -211,15 +211,31 @@ input, textarea {
 	text-align: center;
 }
 
-p.new{
+.new{
 	font-family: 'Fredoka One', cursive;
-  color: purple !important;
+  color: purple;
   font-size: 2em;
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 	text-align: right;
+	&:hover {
+		color: purple;
+	}
 }
 
-
+.btn.outline {
+    background: none;
+    padding: 12px 22px;
+		color: purple;
+	  font-size: 2em;
+	  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+.btn-primary.outline {
+    border: 2px solid #800080;
+    color: #800080;
+		color: purple;
+	  font-size: 2em;
+	  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
 
 
 /*venue*/
