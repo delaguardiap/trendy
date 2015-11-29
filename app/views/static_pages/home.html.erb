@@ -8,6 +8,8 @@
 
 <% if @bars %>
 	<% @bars.each do |bar| %>
+		<div class="venue">
 		<%= link_to "#{bar.name}, #{bar.address} #{bar.rating}"  ,  venue_path(bar) %><br>
+		</div>
 	<% end %>
 <%end%>
