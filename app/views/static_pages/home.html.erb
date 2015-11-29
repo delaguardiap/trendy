@@ -15,6 +15,13 @@
  		 		<li>Address: <%= bar.address %></li>
  		 		<li>Rating: <%= bar.rating %></li>
  		 		<li>Check ins: <%= bar.check_ins.count %></li>
+ 		 		<%if bar.price == nil%>
+	 		 			<li>Price: <%= "Unknown" %></li>
+	 		 		<%elsif bar.price == 0%>
+	 		 			<li>Price: <%= "Free" %></li>
+	 		 		<%else%>
+	 		 			<li>Price: <%= "$" * bar.price %></li>
+ 		 		<%end%>
  			</ul>
  			</div>
 		<%end%>
