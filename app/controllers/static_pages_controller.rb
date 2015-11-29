@@ -26,6 +26,7 @@ class StaticPagesController < ApplicationController
           venue.name = bar['name']
           venue.address = bar['vicinity']
           venue.rating = bar['rating']
+          venue.price = bar['price_level']
           venue.lat = bar['geometry']['location']['lat']
           venue.lng = bar['geometry']['location']['lng']
         end
