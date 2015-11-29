@@ -3,9 +3,9 @@
 
 <div class = 'row'></div>
 <h1 class=title>T R N D I</h1>
-
+<br><br>
 <div class="row">
-  <div class = 'title1'
+  <div class = 'title1'>
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(:session, url: login_path) do |f| %>
 
@@ -16,14 +16,18 @@
       <%= f.password_field :password, :placeholder => "Password", class: 'form-control' %>
     <%= f.label :remember_me, class: "checkbox inline" do %>
       <%= f.check_box :remember_me %>
-      <span>Remember me on this computer</span>
+      <span>Remember Me</span>
     <% end %>
 <br><br><br><br><br>
       <%= f.submit "Log in", class: "btn btn-primary btn-lg btn-block outline" %>
     <% end %>
+<br><br><br><br><br>
 
-  </div>
+<div class = 'facebook'>
+<%= form_tag("auth/facebook", method: "get") do %>
+  <%= submit_tag "Login With Faceook", class: "btn btn-primary btn-lg btn-block outline" %>
+<% end %>
 </div>
 </div>
-
-<%= puts @auth.inspect %>
+</div>
+</div>

@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20151129211617) do
     t.datetime "updated_at",                null: false
     t.boolean  "active",     default: true
     t.integer  "rating"
-    t.integer  "0"
     t.string   "review"
   end
 

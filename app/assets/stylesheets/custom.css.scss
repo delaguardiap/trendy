@@ -27,6 +27,8 @@ body {
 	font-size: 4em;
 	background-image:url("back.jpg");
 	background-size: cover;
+	background-repeat: no-repeat;
+
 }
 
 #review {
@@ -237,17 +239,23 @@ input, textarea {
     background: none;
     padding: 12px 22px;
 		color: purple;
-	  font-size: 2em;
 	  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 .btn-primary.outline {
-    border: 2px solid #800080;
+    border: 4px solid white;
     color: #white;
-		color: purple;
-	  font-size: 2em;
-	  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+		color: white;
+	  text-shadow: -1px 0 purple, 0 1px purple, 1px 0 purple, 0 -1px purple;
 }
 
+
+.facebook{
+	font-family: 'Fredoka One', cursive;
+  color: white;
+  font-size: 10em;
+  text-shadow: -1px 0 purple, 0 1px purple, 1px 0 purple, 0 -1px purple;
+	text-align: center;
+}
 
 /*venue*/
 
