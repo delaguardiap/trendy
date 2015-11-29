@@ -14,10 +14,10 @@
     </div>
 
     <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul>
-        <li><%= link_to "Profile", current_user %></li>
-        <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-        <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+      <ul id="menu">
+        <li class="col-xs-4"><%= link_to "Profile", current_user %></li>
+        <li class="col-xs-4"><%= link_to "Settings", edit_user_path(current_user) %></li>
+        <li class="col-xs-4"><%= link_to "Log out", logout_path, method: "delete" %></li>
       </ul>
     </div>
     <%else%>

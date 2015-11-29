@@ -138,13 +138,13 @@ input {
   margin-left: 0;
 }
 
-// Leaf Map
+/* leaf Map */
 #map {
 	height: 450px;
 	width: 600px;
 }
 
-//Check In form
+/*Check In form*/
 #check_in {
 	border: 5px solid black;
 	display: none;
@@ -161,4 +161,19 @@ img {
 
 input, textarea {
   max-width:100%
+}
+
+/*menu*/
+
+#menu {
+
+	li{
+		margin-top: 10px;
+		display: inline;
+		font-size: 22px;
+	}
+}
+
+.navbar-ex1-collapse {
+	height: 3em;
 }
