@@ -99,7 +99,7 @@ footer {
 /* forms */
 input, textarea, select, .uneditable-input {
 	border: 1px solid #bbb;
-	width: 100%;
+	width:40%;
 	margin-bottom: 15px;
 	@include box_sizing;
 }
@@ -190,4 +190,29 @@ input, textarea {
 	border-radius: 25px;
 	background-color: purple;
 	color: white;
+}
+
+.title {
+
+  font-family: 'Fredoka One', cursive;
+  color: purple;
+  font-size: 10em;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.title1{
+
+  font-family: 'Fredoka One', cursive;
+  color: purple;
+  font-size: 2em;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	text-align: center;
+}
+
+p.new{
+	font-family: 'Fredoka One', cursive;
+  color: purple !important;
+  font-size: 2em;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	text-align: right;
 }

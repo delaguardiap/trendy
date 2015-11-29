@@ -1,7 +1,11 @@
 <% provide(:title, "Log in") %>
+<p class='new'><%= link_to "Sign up now!", new_user_path %></p>
+
+<div class = 'row'></div>
 <h1 class=title>T R N D I</h1>
 
 <div class="row">
+  <div class = 'title1'
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(:session, url: login_path) do |f| %>
 
@@ -16,11 +20,11 @@
       <span>Remember me on this computer</span>
     <% end %>
 
-      <%= f.submit "Log in", class: "btn btn-primary" %>
+      <%= f.submit "Log in", class: "btn btn-primary btn-lg btn-block" %>
     <% end %>
 
-    <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
   </div>
+</div>
 </div>
 
 <%= puts @auth.inspect %>

@@ -18,11 +18,3 @@
    background-image:url("footer_lodyas.png");
    background-size: cover;
        }
-
-.title {
-
-  font-family: 'Fredoka One', cursive;
-  color: purple;
-  font-size: 10em;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-}
