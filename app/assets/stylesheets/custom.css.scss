@@ -182,16 +182,20 @@ input, textarea {
 
 /*search*/
 #chicken {
+	width: 100%;
 	font-size: 5em;
 	border-radius: 25px;
+	display: block;
 }
 
 #search_button {
 	height: 1.2em;
+	width: 100%;
 	font-size: 3em;
 	border-radius: 25px;
 	background-color: purple;
 	color: white;
+	display: block;
 }
 
 .title {
@@ -211,7 +215,7 @@ input, textarea {
 	text-align: center;
 }
 
-p.new{
+.new{
 	font-family: 'Fredoka One', cursive;
   color: purple !important;
   font-size: 2em;
