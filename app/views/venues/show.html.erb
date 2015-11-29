@@ -1,34 +1,41 @@
-<p id="notice"><%= notice %></p>
-<div id='map'>
-</div>
+
 <%= include_gon %>
+
+
+<div id='map'>
 <script type="text/javascript">
      venueaddress();
 </script>
+</div>
 
+<div id = 'bar_info'>
+	<p>
+	  <strong>Name:</strong>
+	  <%= @venue.name %>
+	</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @venue.name %>
-</p>
+	<p>
+	  <strong>Address:</strong>
+	  <%= @venue.address %>
+	</p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @venue.address %>
-</p>
+	<p>
+	  <strong>Google rating:</strong>
+	  <%= @venue.rating %>
+	</p>
+		
+	<p>
+		<strong>Tweets:</strong>
+		<%= getTweets @venue %>	
+	</p>
 
-<p>
-  <strong>Google rating:</strong>
-  <%= @venue.rating %>
-</p>
-	
-<p>
-	<strong>Tweets:</strong>
-	<%= getTweets @venue %>	
-</p>
+	<p>
+		<strong>Check ins:</strong>
+		<%= @venue.check_ins.count %>
+	</p>
+</div>
 
 <div class="actions">
-
 
 <p id = "check_in_link">Check Link</p>
 <div id = "check_in">

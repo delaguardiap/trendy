@@ -31,7 +31,6 @@ class StaticPagesController < ApplicationController
           venue.lng = bar['geometry']['location']['lng']
         end
       end
-      flash.now[:success] = "Success!"
     else
       flash.now[:failure] = "Search cannot be empty"
     end

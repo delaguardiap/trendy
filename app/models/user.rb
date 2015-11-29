@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
-
+  attr_accessor :remember_token
   attr_accessor :skip_method
   attr_accessor :skip_method1
 

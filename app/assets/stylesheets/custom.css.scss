@@ -152,7 +152,7 @@ input {
 /* leaf Map */
 #map {
 	height: 450px;
-	width: 600px;
+	width: 100%;
 }
 
 /*Check In form*/
@@ -185,6 +185,10 @@ input, textarea {
 	}
 }
 
+#bar_info {
+	background-color: white;
+}
+
 .navbar-ex1-collapse {
 	height: 3em;
 }
@@ -194,6 +198,7 @@ input, textarea {
 	width: 100%;
 	font-size: 5em;
 	border-radius: 25px;
+	margin-top: 20px;
 	display: block;
 }
 
