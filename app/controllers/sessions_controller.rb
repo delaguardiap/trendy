@@ -18,16 +18,6 @@ class SessionsController < ApplicationController
     end
 
     def omnicreate
-  #     #OMNIAuth________
-  #     # user = User.sign_in_from_omniauth(auth)
-  #     # # log_in(user)
-  #     # redirect_to root_url, notice: "You Have Successfully Signed In!"
-  #     # puts"*"*200
-  #
-  #     # puts auth_hash.extra.to_hash["raw_info"]["email"]
-  #     # puts"*"*200
-  #     # @user = User.find_or_create_from_auth_hash(auth_hash)
-  #     # auth_hash
       @user = User.find_by(uid: auth_hash.uid)
       unless @user
         @user = User.new
@@ -41,18 +31,14 @@ class SessionsController < ApplicationController
       redirect_to root_path
 
     end
-  #
+
   def destroy
     log_out if logged_in?
-    #  redirect_to root_url
-  #
-  session[:user_id] = nil
-  session[:omniauth] = nil
-  redirect_to root_url, notice: "You Have Signed Out."
+    session[:user_id] = nil
+    session[:omniauth] = nil
+    redirect_to root_url, notice: "You Have Signed Out."
    end
-  #
-  # protected
-  #
+  
   def auth_hash
     request.env['omniauth.auth']
   end
