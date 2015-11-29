@@ -24,7 +24,7 @@ $gray-medium-light: #eaeaea;
 
 body {
 	padding-top: 60px;
-	font-size: 16px;
+	font-size: 4em;
 }
 
 #review {
@@ -175,5 +175,19 @@ input, textarea {
 }
 
 .navbar-ex1-collapse {
-	height: 6em;
+	height: 3em;
+}
+
+/*search*/
+#chicken {
+	font-size: 5em;
+	border-radius: 25px;
+}
+
+#search_button {
+	height: 1.2em;
+	font-size: 3em;
+	border-radius: 25px;
+	background-color: purple;
+	color: white;
 }
