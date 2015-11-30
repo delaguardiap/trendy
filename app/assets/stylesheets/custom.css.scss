@@ -340,6 +340,7 @@ input, textarea {
 	}
 }
 
+<<<<<<< HEAD
 .email{
 	font-family: 'Fredoka One', cursive;
 	color: white;
@@ -378,4 +379,53 @@ input, textarea {
 	&:hover {
 		opacity: 1;
 }
+}
+
+#check_in {
+	#check-in-form{
+		background-color: #fff4e6;
+	}
+}
+
+#venue-name {
+	width: 100%;
+	border: 2px solid red;
+	background-color: blue;
+	border-radius: 25px;
+	text-align: center;
+	margin-top: 10px;
+	height: 75px;
+	span {
+		font-family: 'Fredoka One';
+		font-size: 3em;
+		vertical-align: middle;
+		color: red;
+	}
+}
+
+#bar_info {
+	margin-top: 20px;
+	border-radius: 25px;
+}
+
+#address-bar {
+
+	p {
+		text-align: center;
+		font-size: 2em;
+		#map-button{
+			width: 100%;
+			text-align: center;
+			font-size: 1.5em;
+			background-color: blue;
+			border-radius: 25px;
+			color: red;
+			margin-top: 20px;
+		  font-family: 'Fredoka One';
+		}
+		#address{
+			font-family: 'Fredoka One';
+		}
+
+	}
 }
