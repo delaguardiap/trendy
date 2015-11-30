@@ -4,17 +4,17 @@
 
 <%= form_tag("/search", method: "post") do %>
   <%= text_field_tag(:chicken) %>
-  <%= submit_tag "SHOW ME BARS!", id: "search_button" %>
+  <%= submit_tag "SEARCH!", id: "search_button" %>
 <% end %>
 
 
-
+<br><br><br>
 <% if @bars %>
 	<% @bars.each do |bar| %>
 		<%= link_to venue_path(bar) do %>
 		 	<div class="venue">
 		 	<ul>
- 		 		<li class="first-row"><%= bar.name %></li>
+ 		 		<li class="first-row"><p class='barname'><%= bar.name %></p></li>
  		 		<%if bar.price == nil%>
 	 		 		<li class="first-row price">Price range<%= " Unknown" %></li>
 	 		 			<%elsif bar.price == 0%>
@@ -27,6 +27,7 @@
  		 		<li>Check ins: <%= bar.check_ins.active.count %></li>
  			</ul>
  			</div>
+      <br><br>
 		<%end%>
 	<% end %>
 <%end%>
