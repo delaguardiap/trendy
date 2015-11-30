@@ -19,7 +19,9 @@
 
 <div class="container">
   <%if lastCheckInValid%>
-    <strong>You are currently checked in at <%=lastVenue.name%></strong>
+  <div id = "current-checkin">
+    <span id = "current-checkin-text">You are currently checked in at <%=lastVenue.name%><span>
+  </div>
   <% end%>
 	<% flash.each do |message_type, message| %>
 		<div class="alert alert-<% message_type %>"><%= message %></div>

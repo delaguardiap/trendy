@@ -292,17 +292,48 @@ input, textarea {
 	width: 100%;
 	height: 18em;
 	border-radius: 25px;
-	border: 2px solid yellow;
-	background-color: blue;
-
+	border-top: 2px solid grey;
+	background-color: #fff4e6;
+	opacity: .85;
+	&:hover {
+		opacity: 1;
+	}
 	ul{
 		list-style-type: none;
 
 		li {
-			margin-top: 20px;
+			margin-top: 30px;
 			font-size: 25px;
-			color: white;
+			color: black;
+			font-family: 'Fredoka One';
 		}
+
+
+		.first-row {
+			display: inline-block;
+		}
+
+		.price {
+			float: right;
+			margin-right: 20px;
+		}
+
 	}
 
+}
+
+#current-checkin {
+	font-style: 'Fredoka One';
+	margin-top: 5px;
+	height: 40px;
+
+	text-align: center;
+	font-size: 2em;
+	border-radius: 25px;
+	color: white;
+	background-color: #83F52C;
+	span {
+		display: inline-block;
+		vertical-align: middle;
+	}
 }
