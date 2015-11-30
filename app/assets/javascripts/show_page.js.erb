@@ -4,10 +4,10 @@ $(function(){
 	$("#check_in_link").on('click', function(){
 		if(checkInClicked) {
 			checkInClicked = false;
-			$("#check-in-form").slideDown(400);
+			$("#check-in-form").slideDown(800);
 		} else {
 			checkInClicked = true;
-			$("#check-in-form").slideUp(400);	
+			$("#check-in-form").slideUp(800);	
 		}
 	});
 
@@ -15,11 +15,11 @@ $(function(){
 	$("#check_ins").on('click', function(){
 		if(displayCheckIn) {
 			displayCheckIn = false;
-			$("#active_checkIns").slideDown(400);
-			$("#recent-tweets").slideUp(2000);
+			$("#active_checkIns").slideDown(800);
+			$("#recent-tweets").slideUp(800);
 		} else{
 			displayCheckIn = true;
-			$("#active_checkIns").slideUp(2000);
+			$("#active_checkIns").slideUp(800);
 		}
 	});
 
@@ -27,11 +27,11 @@ $(function(){
 	$("#tweets-galore").on('click', function(){
 		if(displayTweets) {
 			displayTweets = false;
-			$("#recent-tweets").slideDown(2000);
-			$("#active_checkIns").slideUp(400);
+			$("#recent-tweets").slideDown(800);
+			$("#active_checkIns").slideUp(800);
 		} else{
 			displayTweets = true;
-			$("#recent-tweets").slideUp(2000);
+			$("#recent-tweets").slideUp(800);
 		}
 	});
 	

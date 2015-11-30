@@ -7,7 +7,7 @@ module VenuesHelper
 	  }
 
 	  client = Twitter::REST::Client.new(config)  
-	  result = client.search(venue.name, result_type: "recent").take(100)
+	  result = client.search(venue.name, result_type: "recent").take(20)
 	  result.count
 	end
 end
