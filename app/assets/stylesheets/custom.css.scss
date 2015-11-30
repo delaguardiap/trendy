@@ -363,7 +363,13 @@ input, textarea {
 	}
 }
 
+#bar_info {
+	margin-top: 20px;
+	border-radius: 25px;
+}
+
 #address-bar {
+	
 	p {
 		text-align: center;
 		font-size: 2em;
@@ -374,7 +380,8 @@ input, textarea {
 			background-color: blue;
 			border-radius: 25px;
 			color: red;
-			margin-top: 10px;
+			margin-top: 20px;
+		  font-family: 'Fredoka One';
 		}
 		#address{
 			font-family: 'Fredoka One';
