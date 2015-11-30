@@ -269,7 +269,7 @@ input, textarea {
 	border-radius: 25px;
 	border-top: 2px solid grey;
 	background-color: #fff4e6;
-	opacity: .75;
+	opacity: .85;
 	&:hover {
 		opacity: 1;
 	}
@@ -277,15 +277,10 @@ input, textarea {
 		list-style-type: none;
 
 		li {
-			opacity: 0.75;
 			margin-top: 30px;
 			font-size: 25px;
 			color: black;
 			font-family: 'Fredoka One';
-		
-			&:hover {
-			opacity: 1;
-			}
 		}
 
 
@@ -300,4 +295,20 @@ input, textarea {
 
 	}
 
+}
+
+#current-checkin {
+	font-style: 'Fredoka One';
+	margin-top: 5px;
+	height: 40px;
+
+	text-align: center;
+	font-size: 2em;
+	border-radius: 25px;
+	color: white;
+	background-color: #83F52C;
+	span {
+		display: inline-block;
+		vertical-align: middle;
+	}
 }
