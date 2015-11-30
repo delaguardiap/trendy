@@ -49,7 +49,14 @@
 <p><%= link_to 'Back', root_path %>
 
 
-
+<div id="#recent-tweets">
+	<% tweets = getTweetsContent @venue%>
+	<% tweets.each do |tweet| %>
+		<div class = "tweet">
+			<br><%=tweet[:text] %>
+		</div>
+	<%end%>
+</div>
 
 
 

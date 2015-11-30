@@ -12,11 +12,12 @@ $(function(){
 		}
 	});
 
-	var displayCheckIn = true;
+	var displayCheckIn = false;
 	$("#check_ins").on('click', function(){
 		if(displayCheckIn) {
 			displayCheckIn = false;
 			$("#active_checkIns").slideDown(400);
+			$("#recent-tweets").slideUp(400);
 		} else{
 			displayCheckIn = true;
 			$("#active_checkIns").slideUp(400);
@@ -28,6 +29,7 @@ $(function(){
 		if(displayTweets) {
 			displayTweets = false;
 			$("#recent-tweets").slideDown(400);
+			$("#active_checkIns").slideUp(400);
 		} else{
 			displayTweets = true;
 			$("#recent-tweets").slideUp(400);
