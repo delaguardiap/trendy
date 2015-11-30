@@ -34,13 +34,13 @@
 		  <%= text_field_tag :review %>
 		  <%= label_tag :rating, "Rating" %>
 		  <%= range_field_tag :rating, value = nil,  min: 1, max: 5, step: 1 %>
-		  <%= submit_tag("Check In")%>
+		  <%= submit_tag "Check In", id: 'check-in-button'%>
 		<%end%>
 	</div>
 	
 	
 	<div id = "check_ins"><br>Check Ins: <%=@venue.check_ins.active.count%></div>
-	<div id = "tweets"><br>Recent Tweets: <%=getTweets @venue%></div>
+	<div id = "tweets-galore"><br>Recent Tweets: <%=getTweets @venue%></div>
 
 </div>
 
@@ -49,7 +49,14 @@
 <p><%= link_to 'Back', root_path %>
 
 
-
+<div id="recent-tweets">
+	<% tweets = getTweetsContent @venue%>
+	<% tweets.each do |tweet| %>
+		<div class = "tweet">
+			<br><%=tweet[:text] %>
+		</div>
+	<%end%>
+</div>
 
 
 

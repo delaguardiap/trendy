@@ -1,14 +1,13 @@
 $(function(){
-	<% environment.context_class.instance_eval { include CheckInsHelper } %>
 	
 	var checkInClicked = true;
 	$("#check_in_link").on('click', function(){
 		if(checkInClicked) {
 			checkInClicked = false;
-			$("#check_in").slideDown(400);
+			$("#check-in-form").slideDown(800);
 		} else {
 			checkInClicked = true;
-			$("#check_in").slideUp(400);	
+			$("#check-in-form").slideUp(800);	
 		}
 	});
 
@@ -16,21 +15,23 @@ $(function(){
 	$("#check_ins").on('click', function(){
 		if(displayCheckIn) {
 			displayCheckIn = false;
-			$("#active_checkIns").slideDown(400);
+			$("#active_checkIns").slideDown(800);
+			$("#recent-tweets").slideUp(800);
 		} else{
 			displayCheckIn = true;
-			$("#active_checkIns").slideUp(400);
+			$("#active_checkIns").slideUp(800);
 		}
 	});
 
 	var displayTweets = true;
-	$("#tweets").on('click', function(){
+	$("#tweets-galore").on('click', function(){
 		if(displayTweets) {
 			displayTweets = false;
-			$("#recent-tweets").slideDown(400);
+			$("#recent-tweets").slideDown(800);
+			$("#active_checkIns").slideUp(800);
 		} else{
 			displayTweets = true;
-			$("#recent-tweets").slideUp(400);
+			$("#recent-tweets").slideUp(800);
 		}
 	});
 	

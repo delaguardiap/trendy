@@ -1,15 +1,27 @@
 module StaticPagesHelper
-	def getTweets venue
+	# def getTweets venue
 	
-	config = {
+	# config = {
+ #    consumer_key:    ENV["twitterAPI"],
+ #    consumer_secret: ENV["twitterSecret"],
+ #  }
+
+ #  client = Twitter::REST::Client.new(config)  
+ #  result = client.search(venue.name, result_type: "recent")
+ #  result.count
+ #  result.to_json
+	# end
+
+  def getTweetsContent venue
+  
+  config = {
     consumer_key:    ENV["twitterAPI"],
     consumer_secret: ENV["twitterSecret"],
   }
 
   client = Twitter::REST::Client.new(config)  
-  result = client.search(venue.name, result_type: "recent")
-  result.count
-  result.to_json
-	end
+  result = client.search(venue.name, result_type: "recent").take(20)
+  end
+
 
 end
