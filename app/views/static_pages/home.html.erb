@@ -13,19 +13,19 @@
 	<% @bars.each do |bar| %>
 		<%= link_to venue_path(bar) do %>
 		 	<div class="venue">
-		 	<ul>
- 		 		<li class="first-row"><p class='barname'><%= bar.name %></p></li>
- 		 		<%if bar.price == nil%>
-	 		 		<li class="first-row price">Price range<%= " Unknown" %></li>
-	 		 			<%elsif bar.price == 0%>
-	 		 				<li class="first-row price"> <%= "Free" %></li>
-	 		 			<%else%>
-	 		 				<li class="first-row price"><%= "$" * bar.price %></li>
- 		 		<%end%>
- 		 		<li>Rating: <%= bar.rating %></li>
- 		 		<li><%= bar.address %></li>
- 		 		<li>Check ins: <%= bar.check_ins.active.count %></li>
- 			</ul>
+			 	<ul>
+	 		 		<li class="first-row"><p class='barname'><%= bar.name %></p></li>
+	 		 		<%if bar.price == nil%>
+		 		 		<li class="first-row price">Price range<%= " Unknown" %></li>
+		 		 			<%elsif bar.price == 0%>
+		 		 				<li class="first-row price"> <%= "Free" %></li>
+		 		 			<%else%>
+		 		 				<li class="first-row price"><%= "$" * bar.price %></li>
+	 		 		<%end%>
+	 		 		<li>Rating: <%= bar.rating %></li>
+	 		 		<li><%= bar.address %></li>
+	 		 		<li>Check ins: <%= bar.check_ins.active.count %></li>
+	 			</ul>
  			</div>
       <br><br>
 		<%end%>
