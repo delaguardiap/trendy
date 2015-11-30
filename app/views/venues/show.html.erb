@@ -23,34 +23,23 @@
 	  <%= link_to 'Open In Maps', first + @venue.lat.to_s+ ", "+ @venue.lng.to_s + last, class:'btn btn-info btn-sm', id: "map-button"%>
 	</p>
 	</div>
-	<p>
-		<strong>Tweets:</strong>
-		<%= getTweets @venue %>	
-	</p>
-
-	<p>
-		<strong>Check ins:</strong>
-		<%= @venue.check_ins.count %>
-	</p>
 </div>
 
 <div class="actions">
-
-<p id = "check_in_link">Check Link</p>
-<div id = "check_in">
-	<%= form_tag("/check_in", method: "post", id: "check-in-form")do %>
-		<%= hidden_field_tag(:venue_id, @venue.id) %>
-		<%= label_tag :review, "Review" %>
-	  <%= text_field_tag :review %>
-	  <%= label_tag :rating, "Rating" %>
-	  <%= range_field_tag :rating, value = nil,  min: 1, max: 5, step: 1 %>
-	  <%= submit_tag("Check In")%>
-	<%end%>
+	<div id = "check_in_link"><br>Check In!</div>
+	<div id = "check_in">
+		<%= form_tag("/check_in", method: "post", id: "check-in-form")do %>
+			<%= hidden_field_tag(:venue_id, @venue.id) %>
+			<%= label_tag :review, "Review" %>
+		  <%= text_field_tag :review %>
+		  <%= label_tag :rating, "Rating" %>
+		  <%= range_field_tag :rating, value = nil,  min: 1, max: 5, step: 1 %>
+		  <%= submit_tag("Check In")%>
+		<%end%>
+	</div>
 </div>
-
 <p><%= link_to 'Back', root_path %>
 
-</div>
 
 
 
