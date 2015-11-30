@@ -162,10 +162,6 @@ input {
 }
 
 /*Check In form*/
-#check_in {
-	border: 5px solid black;
-	display: none;
-}
 
 .review {
 	border: 1px solid black;
@@ -383,7 +379,9 @@ input, textarea {
 
 #check_in {
 	#check-in-form{
-		background-color: #fff4e6;
+		background-color: red;
+		border-radius: 25px;
+		display: none;
 	}
 }
 
@@ -462,7 +460,7 @@ input, textarea {
 	font-family: 'Fredoka One';
 }
 
-#tweets {
+#tweets-galore {
 	margin-top: 20px;
 	display: inline-block;
 	text-align: center;
@@ -483,6 +481,14 @@ input, textarea {
 	border-radius: 25px;
 	font-family: 'Fredoka One';
 	font-size: 2em;
-	height: 6em;
+	height: 8em;
 	line-height: 2em;
+}
+
+#recent-tweets {
+		display: none;
+}
+
+#active_checkIns {
+		display: none;
 }
