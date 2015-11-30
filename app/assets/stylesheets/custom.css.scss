@@ -26,8 +26,21 @@ body {
 	padding-top: 60px;
 	font-size: 4em;
 	background-image:url("food.png");
+	// background-size: 50px 50px;
+	// background-color: white;
+	// background-image: -webkit-linear-gradient(transparent 50%, rgba(200, 0, 0, .5) 50%, rgba(200, 0, 0, .5)),
+	//                   -webkit-linear-gradient(0deg, transparent 50%, rgba(200, 0, 0, .5) 50%, rgba(200, 0, 0, .5));
+	// background-image: -moz-linear-gradient(transparent 50%, rgba(200, 0, 0, .5) 50%, rgba(200, 0, 0, .5)),
+	//                   -moz-linear-gradient(0deg, transparent 50%, rgba(200, 0, 0, .5) 50%, rgba(200, 0, 0, .5));
+	// background-image: linear-gradient(transparent 50%, rgba(200, 0, 0, .5) 50%, rgba(200, 0, 0, .5)),
+	//                   linear-gradient(90deg, transparent 50%, rgba(200, 0, 0, .5) 50%, rgba(200, 0, 0, .5));
+	// -pie-background: linear-gradient(transparent 50%, rgba(200, 0, 0, .5) 50%, rgba(200, 0, 0, .5)) 0 0 / 50px 50px,
+	//                  linear-gradient(90deg, transparent 50%, rgba(200, 0, 0, .5) 50%, rgba(200, 0, 0, .5)) 0 0 / 50px 50px white;
+	// behavior: url(/pie/PIE.htc);
 
 }
+
+
 
 #review {
 	font-size: 16px		;
@@ -75,7 +88,7 @@ p {
 }
 
 .text{
-	font-family: 'Fredoka One', cursive;
+	font-family: 'Muli', sans-serif;
 	color: white;
 	text-align: center;
 	font-size: 2em;
@@ -213,7 +226,7 @@ input, textarea {
 	width: 50%;
 	font-size: 3em;
 	border-radius: 25px;
-	background-color: purple;
+	background-color: #0066FF;
 	color: white;
 	display: block;
 	margin: auto;
@@ -226,7 +239,7 @@ input, textarea {
   font-family: 'Fredoka One', cursive;
   color: white;
   font-size: 10em;
-  text-shadow: -1px 0 purple, 0 1px purple, 1px 0 purple, 0 -1px purple;
+  text-shadow: -1px 0 #0066FF, 0 1px #0066FF, 1px 0 #0066FF, 0 -1px #0066FF;
 }
 
 .title1{
@@ -294,9 +307,9 @@ input, textarea {
 	width: 100%;
 	height: 18em;
 	border-radius: 25px;
-	border-top: 2px solid grey;
-	background-color: #fff4e6;
-	opacity: .85;
+	border: 2px solid purple;
+	background-color: white;
+	// opacity: .85;
 	&:hover {
 		opacity: 1;
 	}
@@ -307,7 +320,8 @@ input, textarea {
 			margin-top: 30px;
 			font-size: 25px;
 			color: black;
-			font-family: 'Fredoka One';
+			// font-family: 'Fredoka One';
+			font-family: 'Muli', sans-serif;
 		}
 
 
@@ -340,9 +354,15 @@ input, textarea {
 	}
 }
 
+.barname{
+	font-family: 'Muli', sans-serif;
+  font-size: 2em;
+  text-shadow: -1px 0 purple, 0 1px purple, 1px 0 purple, 0 -1px purple;
+}
+
 
 .email{
-	font-family: 'Fredoka One', cursive;
+	font-family: 'Muli', sans-serif;
 	color: white;
   font-size: 2em;
   text-shadow: -1px 0 purple, 0 1px purple, 1px 0 purple, 0 -1px purple;
