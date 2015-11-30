@@ -365,6 +365,8 @@ input, textarea {
 
 #address-bar {
 	p {
+		text-align: center;
+		font-size: 2em;
 		#map-button{
 			width: 100%;
 			text-align: center;
@@ -372,10 +374,11 @@ input, textarea {
 			background-color: blue;
 			border-radius: 25px;
 			color: red;
+			margin-top: 10px;
 		}
-	#address{
-			margin: center;
+		#address{
 			font-family: 'Fredoka One';
 		}
+	
 	}
 }
