@@ -267,8 +267,8 @@ input, textarea {
 	width: 100%;
 	height: 18em;
 	border-radius: 25px;
-	border: 2px solid yellow;
-	background-color: blue;
+	border-top: 2px solid grey;
+	background-color: #fff4e6;
 
 	ul{
 		list-style-type: none;
@@ -276,8 +276,19 @@ input, textarea {
 		li {
 			margin-top: 20px;
 			font-size: 25px;
-			color: white;
+			color: black;
+			font-family: 'Fredoka One';
 		}
+
+		.first-row {
+			display: inline-block;
+		}
+
+		.price {
+			float: right;
+			margin-right: 20px;
+		}
+
 	}
 
 }

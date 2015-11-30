@@ -10,17 +10,17 @@
 		<%= link_to venue_path(bar) do %>
 		 	<div class="venue">
 		 	<ul>
- 		 		<li>Name: <%= bar.name %></li>
- 		 		<li>Address: <%= bar.address %></li>
- 		 		<li>Rating: <%= bar.rating %></li>
- 		 		<li>Check ins: <%= bar.check_ins.count %></li>
+ 		 		<li class="first-row"><%= bar.name %></li>
  		 		<%if bar.price == nil%>
-	 		 			<li>Price: <%= "Unknown" %></li>
-	 		 		<%elsif bar.price == 0%>
-	 		 			<li>Price: <%= "Free" %></li>
-	 		 		<%else%>
-	 		 			<li>Price: <%= "$" * bar.price %></li>
+	 		 		<li class="first-row price">Price range<%= " Unknown" %></li>
+	 		 			<%elsif bar.price == 0%>
+	 		 				<li class="first-row price"> <%= "Free" %></li>
+	 		 			<%else%>
+	 		 				<li class="first-row price"><%= "$" * bar.price %></li>
  		 		<%end%>
+ 		 		<li><%= bar.rating %></li>
+ 		 		<li><%= bar.address %></li>
+ 		 		<li>Check ins: <%= bar.check_ins.active.count %></li>
  			</ul>
  			</div>
 		<%end%>
