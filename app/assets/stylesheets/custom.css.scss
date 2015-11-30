@@ -25,7 +25,7 @@ $gray-medium-light: #eaeaea;
 body {
 	padding-top: 60px;
 	font-size: 4em;
-	background-image:url("back.jpg");
+	background-image:url("back_720.jpg");
 	background-size: cover;
 
 }
@@ -73,6 +73,14 @@ h2 {
 p {
 	font-size: 1.1em;
 	line-height: 1.7em;
+}
+
+.text{
+	font-family: 'Fredoka One', cursive;
+	color: white;
+	text-align: center;
+	font-size: 2em;
+	text-shadow: -1px 0 purple, 0 1px purple, 1px 0 purple, 0 -1px purple;
 }
 
 footer {
@@ -202,13 +210,16 @@ input, textarea {
 }
 
 #search_button {
-	height: 1.2em;
-	width: 100%;
+	height: 4.2em;
+	width: 50%;
 	font-size: 3em;
 	border-radius: 25px;
 	background-color: purple;
 	color: white;
 	display: block;
+	margin: auto;
+	font-family: 'Fredoka One', cursive;
+	text-shadow: -1px 0 purple, 0 1px purple, 1px 0 purple, 0 -1px purple;
 }
 
 .title {
@@ -261,7 +272,24 @@ input, textarea {
 	text-align: center;
 }
 
+
+.gravatar{
+	align-items: center;
+}
 /*venue*/
+
+// User Show Page
+.userpage{
+	font-family: 'Fredoka One', cursive;
+  color: white;
+  font-size: 6em;
+	text-shadow: -1px 0 purple, 0 1px purple, 1px 0 purple, 0 -1px purple;
+}
+
+.avatar{
+	height: 10px;
+	color: white;
+}
 
 .venue {
 	width: 100%;

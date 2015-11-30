@@ -1,9 +1,28 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
-<h1>
-	<%= gravatar_for @user %>
-	<%= @user.name %>
-</h1>
+	<div class= 'col-md-12 col-md-offset-4'>
+	<p class = 'userpage'><%= @user.name %></p></div>
+	<div class = 'row'><br><br><br>
+	<div class= 'col-md-12 col-md-offset-5'>
+ <div class ='avatar'><%=image_tag('avatar.png', :size => '260x100') %></div>
+
+	<p id = "check_in_link">Check Link</p>
+	<div id = "check_in">
+		<%= form_tag("/check_in", method: "post")do %>
+			<%= hidden_field_tag(:name, @name) %>
+			<%#= label_tag :review, "Review" %>
+		  <%#= text_field_tag :review %>
+		  <%#= label_tag :rating, "Rating" %>
+		  <%#= range_field_tag :rating, value = nil,  min: 1, max: 5, step: 1 %>
+		  <%= submit_tag("Check In")%>
+		<%end%>
+	</div>
+
+
+<!-- <div class = 'col-md-12 col-md-offset-5' -->
+<% @date = @user.created_at %>
+<li><p class='text'>Email : <%=@user.email%></p></div></li>
+<li><p class='text'>Member Since : <%=@date.to_date%></p></li><br>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

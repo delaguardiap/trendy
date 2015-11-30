@@ -1,6 +1,10 @@
+<%= render "partials/header"%>
+
+<h1 class=title>T R N D I</h1>
+
 <%= form_tag("/search", method: "post") do %>
   <%= text_field_tag(:chicken) %>
-  <%= submit_tag "Search", id: "search_button" %>
+  <%= submit_tag "SHOW ME BARS!", id: "search_button" %>
 <% end %>
 
 
@@ -26,4 +30,3 @@
 		<%end%>
 	<% end %>
 <%end%>
-
