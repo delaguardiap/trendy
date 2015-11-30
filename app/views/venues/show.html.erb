@@ -34,7 +34,7 @@
 		  <%= text_field_tag :review %>
 		  <%= label_tag :rating, "Rating" %>
 		  <%= range_field_tag :rating, value = nil,  min: 1, max: 5, step: 1 %>
-		  <%= submit_tag("Check In")%>
+		  <%= submit_tag "Check In", id: 'check-in-button'%>
 		<%end%>
 	</div>
 	
