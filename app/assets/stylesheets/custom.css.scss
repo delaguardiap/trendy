@@ -312,3 +312,25 @@ input, textarea {
 		vertical-align: middle;
 	}
 }
+
+#check_in {
+	#check-in-form{
+		background-color: #fff4e6;
+	}
+}
+
+#venue-name {
+	width: 100%;
+	border: 2px solid red;
+	background-color: blue;
+	border-radius: 25px;
+	text-align: center;
+	margin-top: 10px;
+	height: 75px;
+	span {
+		font-family: 'Fredoka One';
+		font-size: 3em;
+		vertical-align: middle;
+		color: red;
+	}
+}

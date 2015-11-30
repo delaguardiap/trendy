@@ -1,6 +1,10 @@
 
 <%= include_gon %>
 
+<div id='venue-name'>
+	<br>
+	<span><%= @venue.name %></span>
+</div>
 
 <div id='map'>
 <script type="text/javascript">
@@ -9,16 +13,15 @@
 </div>
 
 <div id = 'bar_info'>
-	<p>
-	  <strong>Name:</strong>
-	  <%= @venue.name %>
-	</p>
-
+	<% first = 'http://maps.apple.com/?daddr=' %>
+	<% last = '&z=10&t=s' %>
+	<div id = 'address-bar'>
 	<p>
 	  <strong>Address:</strong>
 	  <%= @venue.address %>
+	  <%= link_to 'Open In Maps', first + @venue.lat.to_s+ ", "+ @venue.lng.to_s + last, class:'btn btn-info btn-sm'%>
 	</p>
-
+	</div>
 	<p>
 	  <strong>Google rating:</strong>
 	  <%= @venue.rating %>
@@ -39,7 +42,7 @@
 
 <p id = "check_in_link">Check Link</p>
 <div id = "check_in">
-	<%= form_tag("/check_in", method: "post")do %>
+	<%= form_tag("/check_in", method: "post", id: "check-in-form")do %>
 		<%= hidden_field_tag(:venue_id, @venue.id) %>
 		<%= label_tag :review, "Review" %>
 	  <%= text_field_tag :review %>
@@ -53,10 +56,9 @@
 
 </div>
 
-<% first = 'http://maps.apple.com/?daddr=' %>
-<% last = '&z=10&t=s' %>
 
-<%= link_to 'Open In Maps', first + @venue.lat.to_s+ ", "+ @venue.lng.to_s + last, class:'btn btn-info btn-sm'%>
+
+
 
 <div id="active_checkIns">
 
