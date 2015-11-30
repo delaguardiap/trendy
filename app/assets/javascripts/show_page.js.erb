@@ -1,19 +1,37 @@
 $(function(){
 	<% environment.context_class.instance_eval { include CheckInsHelper } %>
 	
-	var clicked = true;
+	var checkInClicked = true;
 	$("#check_in_link").on('click', function(){
-		if(clicked) {
-			clicked = false;
+		if(checkInClicked) {
+			checkInClicked = false;
 			$("#check_in").slideDown(400);
 		} else {
-			clicked = true;
+			checkInClicked = true;
 			$("#check_in").slideUp(400);	
 		}
 	});
 
-	$("#like_button").on('click', function(){
+	var displayCheckIn = true;
+	$("#check_ins").on('click', function(){
+		if(displayCheckIn) {
+			displayCheckIn = false;
+			$("#active_checkIns").slideDown(400);
+		} else{
+			displayCheckIn = true;
+			$("#active_checkIns").slideUp(400);
+		}
+	});
 
+	var displayTweets = true;
+	$("#tweets").on('click', function(){
+		if(displayTweets) {
+			displayTweets = false;
+			$("#recent-tweets").slideDown(400);
+		} else{
+			displayTweets = true;
+			$("#recent-tweets").slideUp(400);
+		}
 	});
 	
 });

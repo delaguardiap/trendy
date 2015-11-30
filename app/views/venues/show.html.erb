@@ -39,10 +39,12 @@
 	</div>
 	
 	
-		<div id = "check_ins"><br>Check Ins: <%=@venue.check_ins.active.count%></div>
-		<div id = "tweets"><br>Recent Tweets: <%=getTweets @venue%></div>
+	<div id = "check_ins"><br>Check Ins: <%=@venue.check_ins.active.count%></div>
+	<div id = "tweets"><br>Recent Tweets: <%=getTweets @venue%></div>
 
 </div>
+
+
 
 <p><%= link_to 'Back', root_path %>
 
