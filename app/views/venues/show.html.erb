@@ -39,8 +39,8 @@
 	</div>
 	
 	
-		<div id = "check_ins"><br>Check Ins</div>
-		<div id = "tweets"><br>Recent Tweets</div>
+		<div id = "check_ins"><br>Check Ins: <%=@venue.check_ins.active.count%></div>
+		<div id = "tweets"><br>Recent Tweets: <%=getTweets @venue%></div>
 
 </div>
 
