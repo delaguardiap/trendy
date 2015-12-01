@@ -385,7 +385,7 @@ input, textarea {
 	// width: 100%;
 	// height: auto;
 	// border-radius: 25px;
-	border-top: 2px solid grey;
+	border-top: 2px solid gray;
 	background-color: white;
 	opacity: 100;
 	width: 300px;
@@ -402,6 +402,19 @@ input, textarea {
 		background-color: red;
 		border-radius: 25px;
 		display: none;
+		#review {
+			font-size: 3em;
+			border-radius: 25px;
+			margin: auto;
+		}
+		#review-label {
+			font-size: 3em;
+			margin: auto;
+		}
+		#rating {
+			height: 1em;
+		}
+
 	}
 }
 
@@ -514,4 +527,33 @@ input, textarea {
 
 #active_checkIns {
 		display: none;
+}
+
+#new-search {
+	margin-top: 20px;
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+	text-align: center;
+	font-size: 2em;
+	height: 50px;
+	background-color: purple;
+	border-radius: 25px;
+	font-family: 'Fredoka One';
+	color: white;
+}
+
+.navbar-header {
+	height: 5em;
+	.navbar-toggle {
+		height: 5em;
+		width: 5em;
+		.icon-bar{
+			margin:auto;
+			margin-top: 2px;
+		}
+	.navbar-brand {
+		font-size: 5em;
+	}
+	}
 }
