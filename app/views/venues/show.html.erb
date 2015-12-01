@@ -1,6 +1,13 @@
 <%= render 'partials/header' %>
 
 <%= include_gon %>
+
+<%if lastCheckInValid%>
+<div id = "current-checkin">
+  <span id = "current-checkin-text">You are currently checked in at <%=lastVenue.name%><span>
+</div>
+<% end%>
+
 <div class="signup-wrapper">
 <div id='venue-name'>
 	<br>
