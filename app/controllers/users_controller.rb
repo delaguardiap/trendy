@@ -39,10 +39,10 @@
       if @user.save
         log_in @user
         flash[:success] = "Welcome to the Sample App"
-        format.html { redirect_to @user, notice: 'Welcome to Trndy!' }
+        format.html { render 'static_pages/home', notice: 'Welcome to Trndy!' }
         format.json { render :show, status: :created, location: @user }
       else
-        format.html { render :new }
+        format.html { render 'static_pages/home' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
