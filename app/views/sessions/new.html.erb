@@ -1,35 +1,40 @@
-<% provide(:title, "Log in") %>
-<p class='new'><%= link_to "Sign Up Now!", new_user_path %></p>
 
-<div class = 'row'></div>
-<h1 class=title>T R N D I</h1>
-<br><br>
-<div class="row">
-  <div class = 'title1'>
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: login_path) do |f| %>
 
-      <%#= f.label :email %>
-      <%= f.email_field :email, :placeholder => "Email", class: 'form-control' %>
-<br><br><br><br><br>
-      <%#= f.label :password %>
-      <%= f.password_field :password, :placeholder => "Password", class: 'form-control' %>
-    <%= f.label :remember_me, class: "checkbox inline" do %>
-      <%= f.check_box :remember_me %>
+<div class='signup-wrapper'
+    <% provide(:title, "Log in") %>
+    <p class='new' id='signupup'><%= link_to "Sign Up Now!", new_user_path %></p>
 
-      <span>Remember Me</span>
+    <div class = 'row'></div>
+    <br><br><br>
+    <h1 class=title>T R N D I</h1>
+    <br><br>
+    <div class="row">
+      <div class = 'title1'>
+      <div class="col-md-6 col-md-offset-3">
+        <%= form_for(:session, url: login_path) do |f| %>
 
+          <%#= f.label :email %>
+          <%= f.email_field :email, :placeholder => "Email", class: 'form-control' %>
+    <br><br><br>
+          <%#= f.label :password %>
+          <%= f.password_field :password, :placeholder => "Password", class: 'form-control' %>
+        <%= f.label :remember_me, class: "checkbox inline" do %>
+          <%= f.check_box :remember_me %>
+
+          <span class='remember'>Remember Me</span>
+
+        <% end %>
+    <br><br><br>
+          <%= f.submit "Log in", id: "login-btn", class: "login-btn btn btn-primary btn-lg btn-block outline" %>
+        <% end %>
+    <br><br><br><br><br>
+
+    <div class = 'facebook'>
+    <%= form_tag("auth/facebook", method: "get") do %>
+      <%= submit_tag "Login With Facebook", id: "facebook", class: "btn btn-primary btn-lg btn-block outline" %>
     <% end %>
-<br><br><br><br><br>
-      <%= f.submit "Log in", class: "btn btn-primary btn-lg btn-block outline" %>
-    <% end %>
-<br><br><br><br><br>
-
-<div class = 'facebook'>
-<%= form_tag("auth/facebook", method: "get") do %>
-  <%= submit_tag "Login With Facebook", class: "btn btn-primary btn-lg btn-block outline" %>
-<% end %>
-</div>
-</div>
-</div>
+    </div>
+    </div>
+    </div>
+    </div>
 </div>

@@ -1,23 +1,27 @@
-<h1 class='signup'>Sign up</h1>
+<div class='signup-wrapper'>
+	<h1 class=title>T R N D I</h1>
+<br><br>
+		<h1 class='signup'>Sign Up</h1>
 
-<div class="row">
-	<div class="col-md-6 col-md-offset-3">
-		<%= form_for(@user) do |f| %>
-			<%=render 'shared/error_messages'%>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<%= form_for(@user) do |f| %>
+					<%=render 'shared/error_messages'%>
+<!--Whats that above?  -->
 
-			<%= f.label :name %>
-			<%= f.text_field :name, class: 'form-control' %>
+					<%= f.text_field :name, placeholder: 'Name', id: 'form-control' %>
 
-			<%= f.label :email %>
-			<%= f.email_field :email, class: 'form-control' %>
 
-			<%= f.label :password %>
-			<%= f.password_field :password, class: 'form-control' %>
+					<%= f.email_field :email, placeholder: 'Email', id: 'form-control' %>
 
-			<%= f.label :password_confirmation, "Confirmation" %>
-			<%= f.password_field :password_confirmation, class: 'form-control' %>
 
-			<%= f.submit "Create my account", class: "btn btn-primary" %>
-		<%end%>
-	</div>
+					<%= f.password_field :password, placeholder: 'Password', id: 'form-control' %>
+
+
+					<%= f.password_field :password_confirmation, placeholder:'Confirmation', id: 'form-control' %>
+
+					<%= f.submit "Create my account", class: "btn btn-primary btn-lg btn-block outline" %>
+				<%end%>
+			</div>
+		</div>
 </div>
