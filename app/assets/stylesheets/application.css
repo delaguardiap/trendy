@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+body{
+  font-family: 'Raleway', sans-serif;
+}
+
+input, button, select, textarea {
+   font-family: 'Railway', sans-serif !important;
+}
