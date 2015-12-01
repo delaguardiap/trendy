@@ -181,7 +181,16 @@ input {
 /*Check In form*/
 
 .review {
-	border: 1px solid black;
+	border: 4px solid white;
+	margin-top: 2px;
+	text-align: center;
+	p{
+		color: white;
+	}
+	input[type="submit"]{
+		padding-left: 2em;
+		text-align: center;
+	}
 }
 
 img {
@@ -473,16 +482,17 @@ font-family: 'Raleway', sans-serif;
 
 #check_in {
 	#check-in-form{
-		background-color: red;
-		border-radius: 25px;
+		border: 4px solid white;
 		display: none;
+		text-align: center;
 		#review {
 			font-size: 3em;
-			border-radius: 25px;
 			margin: auto;
 		}
 		#review-label {
 			font-size: 3em;
+			padding: 1.25em;
+			color: white;
 			margin: auto;
 		}
 	.value {
@@ -526,6 +536,10 @@ font-family: 'Raleway', sans-serif;
 	  }
 
 	}
+}
+
+input[type="text"] {
+	margin-left:  3em;
 }
 
 input[type="submit"] {
