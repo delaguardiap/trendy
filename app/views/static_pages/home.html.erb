@@ -4,11 +4,10 @@
   <% if @current_user %>
   <%= render "partials/header"%>
   <%end %>
-
-<h1 class=title>T R N D I</h1>
+<!-- <h1 class=title>T R N D I</h1> -->
 
 <%= form_tag("/search", method: "post") do %>
-  <%= text_field_tag(:chicken) %><br><br>
+  <%= text_field_tag(:chicken) %>
   <%= submit_tag "SEARCH!", class:"login-btn btn btn-primary btn-lg btn-block outline", id: "login-btn facebook" %>
 <% end %>
 
@@ -22,7 +21,7 @@
  		 		<li><p class='barname'><%= bar.name %></p></li>
           <li class = 'baraddress'><%= bar.address %></li>
  		 		<%if bar.price == nil%>
-	 		 		<li class="first-row price">Price range<%= " Unknown" %></li>
+	 		 		<li class="first-row price">?   </li>
 	 		 			<%elsif bar.price == 0%>
 	 		 				<li class="first-row price"> <%= "Free" %></li>
 	 		 			<%else%>
