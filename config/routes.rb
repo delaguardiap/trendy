@@ -6,7 +6,10 @@
 
   resources :users
   resources :venues
+  resources :relationships, only: [:create, :destroy]
   root 'static_pages#home'
+
+  get 'follow' => 'users#follow'
 
   get 'about' => 'static_pages#about'
   get 'contact' => 'static_pages#contact'

@@ -12,7 +12,13 @@
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @feed = @user.feed
     # debugger
+  end
+
+  def follow
+    current_user.follow User.find params[:format]
+    redirect_to :back
   end
 
   # GET /users/new

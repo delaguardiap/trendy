@@ -57,3 +57,16 @@
   <li role="presentation"><a href="#">Profile</a></li>
   <li role="presentation"><a href="#">Messages</a></li>
 </ul>
+
+<div id="feeds">
+  <%@feed.each do |check_in|%>
+  	<%user = User.find check_in.user_id%>
+  	<%venue = Venue.find check_in.venue_id%>
+  	<div class="feed">
+  		<p><%=user.name%></p>
+  		<p><%=venue.name%></p>
+  		<p><%=check_in.review%></p>
+  		<P><%=check_in.rating%></P>
+  	</div>
+  <%end%>
+</div>
