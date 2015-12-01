@@ -44,7 +44,7 @@ body {
 
 .review {
 	p{
-		font-size: 20px;		
+		font-size: 20px;
 	}
 	input[type="submit"]{
 	/* padding-left: 2em; */
@@ -194,6 +194,10 @@ input {
 	margin-top: 2px;
 	text-align: center;
 	color: white;
+}
+
+#navtrndi{
+text-align: center;
 }
 
 img {
@@ -698,8 +702,25 @@ label.checkbox{
 			margin:auto;
 			margin-top: 2px;
 		}
-	.navbar-brand {
+	}
+}
 
-	}
-	}
+.navbar-brand {
+    float: left;
+    padding: 15px 15px;
+    font-size: 36px;
+    line-height: 60px;
+    height: 50px;
+		font-family: 'Raleway', sans-serif;
+		color: white;
+}
+
+.navbar-default {
+    background-color: #7F2523;
+    border-color: #e7e7e7;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: white;
+    background-color: transparent;
 }
