@@ -17,6 +17,7 @@ $(function(){
 			displayCheckIn = false;
 			$("#active_checkIns").slideDown(800);
 			$("#recent-tweets").slideUp(800);
+			displayTweets = true;
 		} else{
 			displayCheckIn = true;
 			$("#active_checkIns").slideUp(800);
@@ -29,6 +30,7 @@ $(function(){
 			displayTweets = false;
 			$("#recent-tweets").slideDown(800);
 			$("#active_checkIns").slideUp(800);
+			displayCheckIn = true;
 		} else{
 			displayTweets = true;
 			$("#recent-tweets").slideUp(800);
