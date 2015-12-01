@@ -42,8 +42,17 @@ body {
 
 
 
-#review {
-	font-size: 16px		;
+.review {
+	p{
+		font-size: 20px;		
+	}
+	input[type="submit"]{
+	/* padding-left: 2em; */
+  /* text-align: center; */
+  background-color: #7F2523;
+  /*font-family: 'rails';*/
+  font-family: 'Raleway', sans-serif;
+	}
 }
 
 section {
@@ -184,13 +193,7 @@ input {
 	border: 4px solid white;
 	margin-top: 2px;
 	text-align: center;
-	p{
-		color: white;
-	}
-	input[type="submit"]{
-		padding-left: 2em;
-		text-align: center;
-	}
+	color: white;
 }
 
 img {
@@ -349,7 +352,9 @@ font-family: 'Raleway', sans-serif;
 	align-items: center;
 }
 /*venue*/
-
+#venue-name {
+	margin-top: 20px;
+}
 // User Show Page
 .userpage{
 	font-family: 'Raleway', sans-serif;
