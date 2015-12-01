@@ -129,7 +129,7 @@ input, textarea, select, .uneditable-input {
 }
 
 .form-control{
-	height: 2em;
+	height: 3em;
 	font-size: 1em;
 }
 
@@ -225,8 +225,8 @@ input, textarea {
 #chicken {
 	width: 100%;
 	font-size: 5em;
-	border-radius: 25px;
-	margin-top: 20px;
+	border-radius: 4px;
+	margin-top: 80px;
 	display: block;
 }
 
@@ -311,7 +311,7 @@ input, textarea {
 }
 
 input.btn.btn-primary {
-    font-size: 2rem;
+    font-size: 3rem;
     width: 100%;
     padding: 2rem;
 }
@@ -532,10 +532,6 @@ font-family: 'Raleway', sans-serif;
 	  }
 
 	}
-}
-
-input[type="text"] {
-	margin-left:  3em;
 }
 
 input[type="submit"] {
