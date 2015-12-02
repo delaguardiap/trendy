@@ -42,7 +42,7 @@
 			<%= hidden_field_tag(:venue_id, @venue.id) %>
 			<%= label_tag :review, "Review", id: "review-label" %>
 		  <%= text_field_tag :review %><br>
-		  <%= label_tag :rating, "Rating" %>
+		  <%= label_tag :rating, "Rating" %><br><br>
 		  <%= range_field_tag :rating, value = nil,  min: 1, max: 5, step: 1 %>
 		  <%= submit_tag "Check In", id: 'check-in-button'%>
 		<%end%>

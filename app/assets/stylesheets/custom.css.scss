@@ -558,6 +558,7 @@ input[type="submit"] {
 	margin-top: 15px;
 	height: 3em;
 	font-size: 2em;
+	font-family: 'Raleway', sans-serif;
 
 }
 
@@ -597,7 +598,7 @@ label.checkbox{
 	    text-align: center;
 	    font-size: 1.5em;
 	    background-color: #7F2523;
-	    color: #E9D6D6;
+	    color: white;
 	    margin-top: 20px;
 	    font-family: 'Raleway', sans-serif;
 		}
@@ -727,4 +728,14 @@ label.checkbox{
 
 .navbar-default .navbar-brand {
 color: white;
+}
+
+button, input, optgroup, select, textarea {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+}
+
+#check-in-button{
+	background-color: #7F2523;
 }
