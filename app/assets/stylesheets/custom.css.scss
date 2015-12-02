@@ -559,6 +559,9 @@ input[type="submit"] {
 	height: 3em;
 	font-size: 2em;
 	font-family: 'Raleway', sans-serif;
+	a{
+		color:black;
+	}
 
 }
 
@@ -730,14 +733,15 @@ label.checkbox{
 color: white;
 }
 
-button, input, optgroup, select, textarea {
-    color: white;
-    font-family: 'Raleway', sans-serif;
-    margin: 0;
-}
+// button, input, optgroup, select, textarea {
+//     color: black;
+//     font-family: 'Raleway', sans-serif;
+//     margin: 0;
+// }
 
 #check-in-button{
 	background-color: #7F2523;
+	color:white;
 }
 
 .btn-info {
@@ -745,8 +749,8 @@ button, input, optgroup, select, textarea {
 
 }
 
-button, input, optgroup, select, textarea {
-    color: black;
-    font-family: 'Raleway', sans-serif;
-    margin: 0;
-}
+// button, input, optgroup, select, textarea {
+//     color: black;
+//     font-family: 'Raleway', sans-serif;
+//     margin: 0;
+// }
