@@ -1,14 +1,15 @@
 <%= render 'partials/header' %>
 
 <%= include_gon %>
-
+<div class="signup-wrapper">
+<br>
 <%if lastCheckInValid%>
 <div id = "current-checkin">
   <span id = "current-checkin-text">You are currently checked in at <%=lastVenue.name%><span>
 </div>
 <% end%>
 
-<div class="signup-wrapper">
+
 <br><br><br>
 <div id='venue-name'>
 	<br>
@@ -46,8 +47,8 @@
 		  <%= submit_tag "Check In", id: 'check-in-button'%>
 		<%end%>
 	</div>
-	
-	
+
+
 	<div id = "check_ins"><br>Check Ins: <%=@venue.check_ins.active.count%></div>
 	<div id = "tweets-galore"><br>Recent Tweets: <%=getTweets @venue%></div>
 
@@ -74,31 +75,31 @@
 
 	<% @elements.each do |element| %>
 		<div class="review">
-			
-			<p><%= "User: " + element[:user].name%><br> 
+
+			<p><%= "User: " + element[:user].name%><br>
 			<%if current_user.following?(element[:user]) == false && current_user.id != element[:user].id%><br>
 				<%=link_to "Follow", follow_path(element[:user].id)%>
 			<%end%>
-			<%="Rating: " + element[:check_in].rating.to_s%></p> 
+			<%="Rating: " + element[:check_in].rating.to_s%></p>
 			<p><%=element[:check_in].review.to_s%></p>
 			<% unless element[:check_in].upvoted? current_user %>
-				
+
 				<%= form_tag("/vote", method: "post") do %>
 					<%= hidden_field_tag(:check_in, element[:check_in].id) %>
 					<%=  submit_tag("Like") %>
 				<%end%>
-				
+
 					<% else %>
-					
+
 				<%= form_tag("/downvote", method: "post") do %>
 					<%= hidden_field_tag(:check_in, element[:check_in].id) %>
-					<%=  submit_tag("Liked!") %>				
+					<%=  submit_tag("Liked!") %>
 				<% end %>
-			
+
 			<%end%>
 
 		</div>
-	
+
 	<%end%>
 </div>
 </div>
