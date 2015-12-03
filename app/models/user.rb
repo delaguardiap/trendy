@@ -20,14 +20,13 @@ class User < ActiveRecord::Base
 	validates :email, email: true, uniqueness: true
 	validates :password, presence: true, length: { minimum: 6 }, :if => 'provider.blank?'
 
-  # Will call the active scope on the user's check ins
-  # and will call the deactivate! method on each of those check ins.
+
   def deactivate_check_ins!
     if check_ins.last
       check_ins.last.deactivate!
     end
   end
-# user.check_in!(venue)
+
   def follow(other_user)
     active_relationships.create(followed_id: other_user.id)
   end

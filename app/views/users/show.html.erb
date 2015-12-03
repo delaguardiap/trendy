@@ -1,4 +1,3 @@
-<!-- <p id="notice"><%= notice %></p> -->
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
 
@@ -35,10 +34,6 @@
 <div id = "check_in">
 	<%= form_tag("/check_in", method: "post")do %>
 		<%= hidden_field_tag(:name, @name) %>
-		<%#= label_tag :review, "Review" %>
-		<%#= text_field_tag :review %>
-		<%#= label_tag :rating, "Rating" %>
-		<%#= range_field_tag :rating, value = nil,  min: 1, max: 5, step: 1 %>
 		<%= submit_tag("Check In")%>
 	<%end%>
 </div></div>

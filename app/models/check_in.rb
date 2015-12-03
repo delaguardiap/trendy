@@ -27,7 +27,6 @@ class CheckIn < ActiveRecord::Base
 	end
 
 	def upvoted? user
-		# puts user.id
 		if upvotes.empty? == false
 				upvotes.each do |upvote|
 
@@ -39,21 +38,4 @@ class CheckIn < ActiveRecord::Base
 		end
 		return false
 	end
-
-
-	# def downvote!
-	# 	downvotes.create
-	# end
-
-	# def votes
-	# 	upvotes.count - downvotes.count	
-	# end	
-
-
-	
-	# def is_inactive
-	# 	if self.active == false
-	# 		self.destroy
-	# 	end
-	# end
 end
