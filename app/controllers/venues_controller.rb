@@ -1,6 +1,7 @@
 class VenuesController < ApplicationController
   include SessionsHelper
   before_action :set_venue, only: [:show, :edit, :update, :destroy]
+  before_action :add_venue, only: [:index, :destroy]
 
   # GET /venues
   # GET /venues.json
@@ -89,4 +90,9 @@ class VenuesController < ApplicationController
     def venue_params
       params.require(:venue).permit(:name, :address, :rating)
     end
+
+    def add_venue
+      redirect_to root_url unless current_user.admin
+    end
+
 end

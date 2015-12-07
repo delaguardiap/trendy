@@ -1,11 +1,14 @@
   class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :user_logged_in?, except: [:new, :create]
-
+  before_action :admin_user, only: [:index, :destroy]
+  before_action :edit_user, only: [:edit, :destroy]
   # GET /users
   # GET /users.json
   def index
     @users = User.all
+    	# unless current_user.admin = true
+    	# redirect_to root_path
   end
 
   # GET /users/1
@@ -34,7 +37,6 @@
   # POST /users.json
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
       if @user.save
         log_in @user
@@ -81,6 +83,14 @@
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :email, :password)
+    end
+
+    def admin_user
+      redirect_to root_url unless current_user.admin
+    end
+
+    def edit_user
+      redirect_to root_url unless current_user.id == @user.id
     end
 
 end

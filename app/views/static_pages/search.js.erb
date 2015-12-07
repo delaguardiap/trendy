@@ -1,0 +1,24 @@
+  <% if @bars %>
+  console.log('THIS SHIT WORKED!')
+  	<% @bars.each do |bar| %>
+  		<%= link_to venue_path(bar) do %>
+  		 	<div class="venue">
+  		 	<ul>
+   		 		<li><p class='barname'><%= bar.name %></p></li>
+            <li class = 'baraddress'><%= bar.address %></li>
+   		 		<%if bar.price == nil%>
+  	 		 		<li class="first-row price">?   </li>
+  	 		 			<%elsif bar.price == 0%>
+  	 		 				<li class="first-row price"> <%= "Free" %></li>
+  	 		 			<%else%>
+  	 		 				<li class="first-row price"><%= "$" * bar.price %></li>
+   		 		<%end%>
+
+   		 		<li class = 'first-row rating'>Rating: <%= bar.rating %></li>
+   		 		<li><div class= 'second-row'>Check ins: <%= bar.check_ins.active.count %></div></li>
+   			</ul>
+   			</div>
+        <br><br>
+  		<%end%>
+  	<% end %>
+  <%end%>

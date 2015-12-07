@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151201202543) do
+ActiveRecord::Schema.define(version: 20151207170346) do
 
   create_table "check_ins", force: :cascade do |t|
     t.integer  "user_id"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20151201202543) do
     t.string   "remember_digest"
     t.string   "provider"
     t.string   "uid"
+    t.boolean  "admin"
   end
 
   create_table "venues", force: :cascade do |t|
