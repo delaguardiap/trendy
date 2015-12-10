@@ -17,6 +17,7 @@
         <li class="col-xs-4"><%= link_to "Profile", current_user %></li>
         <li class="col-xs-4"><%= link_to "Settings", edit_user_path(current_user) %></li>
         <li class="col-xs-4"><%= link_to "Log out", logout_path, method: "delete" %></li>
+        <li class="col-xs-4"><%= link_to "About Us", about_path %></li>
       </ul>
     </div>
     <%else%>

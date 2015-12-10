@@ -28,4 +28,6 @@
   get 'auth/:provider/callback', to: 'sessions#omnicreate'
   delete 'sign_out', to: 'sessions#destroy', as: 'sign_out'
 
+
+
 end
