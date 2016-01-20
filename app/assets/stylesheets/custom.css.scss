@@ -785,7 +785,7 @@ input::-webkit-input-placeholder {
 }
 
 .navbar-nav {
-    margin: 9.5px 1px 10px 155px;
+    margin: 9.5px 1px 10px 10px;
 }
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
@@ -798,4 +798,8 @@ input::-webkit-input-placeholder {
 
 .navbar-toggle {
     background-color: white;
+}
+
+.btn-info{
+	border-color:white;
 }
