@@ -1,4 +1,3 @@
-
 <div class="signup-wrapper">
 
   <% if @current_user %>
@@ -6,8 +5,9 @@
   <%end %><br><br><br>
 <h1 class=title>T R N D I</h1>
 
+<!-- Search through the Google Places API -->
 <%= form_tag("/search", method: "post") do %>
-  <%= text_field_tag(:chicken) %>
+  <%= text_field_tag :search, params[:search], placeholder: 'Enter an Address or City'%>
   <%= submit_tag "SEARCH!", class:"login-btn btn btn-primary btn-lg btn-block outline", id: "login-btn facebook" %>
 <% end %>
 

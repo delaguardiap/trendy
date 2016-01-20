@@ -12,8 +12,11 @@ class StaticPagesController < ApplicationController
   end
 
   def search
-    if params[:chicken] != ""
-      address = params[:chicken].gsub(' ','%20')
+    if params[:search] != ""
+      # a = :chicken
+      # puts '*****************************'
+      # puts a 'jfjfj'
+      address = params[:search].gsub(' ','%20')
       address = address.gsub(',','%2C')
       url = "https://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key=#{ENV['googlekey']}"
       response = HTTParty.get(url)

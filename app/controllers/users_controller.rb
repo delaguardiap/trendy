@@ -27,6 +27,7 @@
   # GET /users/new
   def new
     @user = User.new
+    # Creates a new instance variable @user from the User model.
   end
 
   # GET /users/1/edit

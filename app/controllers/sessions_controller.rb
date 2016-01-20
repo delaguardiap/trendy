@@ -1,10 +1,11 @@
 class SessionsController < ApplicationController
-          
+
 
     # end
   def new
   end
 
+# Creates Session when a user creates and account or logsin
   def create
   	user = User.find_by(email: params[:session][:email].downcase)
   	if user && user.authenticate(params[:session][:password])
@@ -38,7 +39,7 @@ class SessionsController < ApplicationController
     session[:omniauth] = nil
     redirect_to root_url, notice: "You Have Signed Out."
    end
-  
+
   def auth_hash
     request.env['omniauth.auth']
   end
